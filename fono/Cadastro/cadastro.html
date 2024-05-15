@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fono | Cadastro</title>
+    <link rel="stylesheet" href="../assets/padrao.css">
+    <link rel="stylesheet" href="cadastro.css">
+    <link rel="shortcut icon" href=" " type="image/x-icon">
+</head>
+<body>
+    <div id="container-cadastro">
+        <h1 id="cadastro-titulo">Criar uma conta</h1>
+        <h1 id="cadastro-subtitulo">Entre com seu email para acessar a sua conta</h1>
+        <form action="TIAGOLEGALK.php" method="POST">
+            <div class="input">
+                <input id="input-email" name="email" type="text" required>
+                <label for="input-email">Email</label>
+            </div>
+            <div class="input">
+                <input id="input-senha" name="senha" type="password" required>
+                <label for="input-senha">Senha</label>
+            </div>
+            <button id="cadastro-botao-criar" type="submit">Criar com email</button>
+        </form>
+        <div id="cadastro-outra-opcao">
+            <p id="cadastro-texto-outro">ou continue com</p>
+            <hr id="cadastro-separacao">
+        </div>
+        <button id="cadastro-google">
+            <img id="cadastro-imagem-google" src="../assets/imagens/google.png" alt="">
+            <p>Google</p>
+        </button>
+        <p id="cadastro-termos">Ao clicar em entrar, você concorda com os <a href="">Termos de Serviço</a> e <a href="">Política de Privacidade</a></p>
+    </div>
+</body>
+</html>
