@@ -1,0 +1,22 @@
+DROP DATABASE if exists fono;
+
+CREATE DATABASE fono;
+
+CREATE TABLE dados_paciente(
+    cod_paciente int primary key AUTO_INCREMENT,
+    nome_paciente VARCHAR(120),
+    cpf_paciente VARCHAR(15),
+    rg_paciente VARCHAR(13),
+    data_nascimento DATE,
+    nome_responsavel VARCHAR(120),
+    telefone_paciente VARCHAR(15),
+    carteira_convenio VARCHAR(30),
+    nacionalidade_paciente VARCHAR(20),
+    contato_emergencia VARCHAR(120),
+    cpf_responsavel VARCHAR(120),
+    cep_paciente VARCHAR(40),
+    estado_civil VARCHAR(15),
+    sexo VARCHAR(15),
+    tipo_sanguineo VARCHAR(5),
+    numero_responsavel VARCHAR(15)
+);
