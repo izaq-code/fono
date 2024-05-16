@@ -1,0 +1,79 @@
+#container-cadastro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 430px;
+}
+
+#cadastro-titulo {
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+#cadastro-subtitulo {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
+
+#cadastro-botao-criar{
+    background-color: var(--corprincipal);
+    color: white;
+    font-weight: 500;
+    border-radius: 10px;
+    width: 100%;
+    border: none;   
+    font-size: 15px;   
+    padding: 10px;
+    cursor: pointer;
+}
+
+#cadastro-separacao{
+    margin: 30px 0px 30px 0px;
+    border-color: var(--corfundo);
+}
+
+#cadastro-outra-opcao {
+    position: relative;
+    text-align: center;
+}
+
+#cadastro-texto-outro {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -120%);
+    background-color: var(--corfundo);
+    color: #828282;
+    padding: 0 5px;
+    color: 828282;
+}
+
+#cadastro-google {
+    background-color: var(--corfundosecundaria);
+    border-radius: 10px;
+    font-weight: 600;
+    width: 100%;
+    border: none;   
+    font-size: 15px;   
+    padding: 10px;
+    cursor: pointer;
+}
+
+#cadastro-google p {
+    margin: 0;
+    margin-top: 3px;
+}
+
+#cadastro-imagem-google {
+    max-width: 24px;
+    float: left;
+}
+
+#cadastro-termos a {
+    font-weight: bolder;
+    text-decoration: none;
+    color: black;
+}
