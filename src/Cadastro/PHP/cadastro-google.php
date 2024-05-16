@@ -4,7 +4,7 @@ require 'conexao.php'; // Arquivo com a conexão ao banco de dados
 
 $client_id = '686746649529-s1bjq6d0rjpl129etdr05ugps0n8a07b.apps.googleusercontent.com';
 $client_secret = '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';
-$redirect_uri = 'http://localhost/clinica-medica-main/fono/src/Cadastro/PHP/cadastro-google.php';
+$redirect_uri = 'http://localhost/fono/src/Cadastro/PHP/cadastro-google.php';
 
 if (isset($_GET['code'])) {
     $code = $_GET['code'];
@@ -46,9 +46,9 @@ if (isset($_GET['code'])) {
         ]);
 
         $_SESSION['user'] = $userinfo;
-        header('Location: http://localhost/clinica-medica-main/fono/src/inicio/inicio.html');
+        header('Location: http://localhost/fono/src/inicio/inicio.html');
     } else {
-        header('Location: http://localhost/clinica-medica-main/fono/src/Cadastro/PHP/error.php');
+        header('Location: http://localhost/fono/src/Cadastro/PHP/error.php');
     }
     exit;
 }
