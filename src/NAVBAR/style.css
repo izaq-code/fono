@@ -59,7 +59,6 @@ body.dark-mode {
 
 .submenu {
     display: block;
-
 }
 
 .submenu.visible {
@@ -82,12 +81,10 @@ body.dark-mode {
     background-color: #008080;
     padding-left: 35px;
     padding-right: 20px;
-    
 }
 
 .search-bar input[type="search"]::placeholder {
-color: #fff;
-    
+    color: #fff;
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -96,7 +93,7 @@ input[type="search"]::-webkit-search-cancel-button {
     appearance: none;
 }
 
-#sea{
+#sea {
     position: absolute;
     margin-top: 29px;
     margin-left: 10px;
@@ -174,8 +171,294 @@ input:checked~label .to::before {
     display: none;
 }
 
-#menuIcon,#settingsIcon{
+#menuIcon,
+#settingsIcon {
     position: absolute;
     margin-top: -35px;
     margin-left: 220px;
+}
+
+@media only screen and (min-width: 550px) {
+    .navbar {
+        width: 250px;
+    }
+
+    .submenu {
+        display: block;
+    }
+
+    .search-bar input[type="search"] {
+        width: 240px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        width: 80px;
+    }
+
+    .search-bar input[type="search"] {
+        width: 90px;
+        margin-left: -10px;
+        font-size: 10px;
+    }
+
+    .search-bar input[type="search"]::placeholder {
+        font-size: 7px;
+    }
+
+    .submenu-item {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    #settingsIcon {
+        display: none;
+    }
+
+    #menuIcon {
+        display: none;
+    }
+
+    .submenu-item {
+        margin-left: 20px;
+        padding: 10px;
+        max-width: 17px;
+    }
+
+    .submenu-item:hover {
+        background-color: #008080;
+        border-radius: 10px;
+        padding: 10px;
+        color: #fff;
+        font-weight: bold;
+        max-width: 17px;
+    }
+
+    #salvos::after {
+        content: attr(data-tooltip);
+        display: none;
+        position: absolute;
+        background-color: #008080;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        left: 150px;
+        top: 620px;
+    }
+
+    #salvos:hover::after {
+        display: block;
+    }
+
+    #salvos[data-tooltip]:hover::after {
+        content: attr(data-tooltip);
+        display: block;
+    }
+
+    #Informacoes::after {
+        content: attr(data-tooltip);
+        display: none;
+        position: absolute;
+        background-color: #008080;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        left: 150px;
+        top: 580px;
+    }
+
+    #Informacoes:hover::after {
+        display: block;
+    }
+
+    #Informacoes[data-tooltip]:hover::after {
+        content: attr(data-tooltip);
+        display: block;
+    }
+
+    #Clientes::after {
+        content: attr(data-tooltip);
+        display: none;
+        position: absolute;
+        background-color: #008080;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        left: 150px;
+        top: 215px;
+    }
+
+    #Clientes:hover::after {
+        display: block;
+    }
+
+    #Clientes[data-tooltip]:hover::after {
+        content: attr(data-tooltip);
+        display: block;
+    }
+
+    #cad::after {
+        width: 200px;
+        content: attr(data-tooltip);
+        display: none;
+        position: absolute;
+        background-color: #008080;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        left: 150px;
+        top: 250px;
+    }
+
+    #cad:hover::after {
+        display: block;
+    }
+
+    #cad[data-tooltip]:hover::after {
+        content: attr(data-tooltip);
+        display: block;
+    }
+
+    #at::after {
+        width: 200px;
+        content: attr(data-tooltip);
+        display: none;
+        position: absolute;
+        background-color: #008080;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        left: 150px;
+        top: 290px;
+    }
+
+    #at:hover::after {
+        display: block;
+    }
+
+    #at[data-tooltip]:hover::after {
+        content: attr(data-tooltip);
+        display: block;
+    }
+
+    #ar::after {
+        width: 200px;
+        content: attr(data-tooltip);
+        display: none;
+        position: absolute;
+        background-color: #008080;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        left: 150px;
+        top: 325px;
+    }
+
+    #ar:hover::after {
+        display: block;
+    }
+
+    #ar[data-tooltip]:hover::after {
+        content: attr(data-tooltip);
+        display: block;
+    }
+
+    #estoque::after {
+        width: 200px;
+        content: attr(data-tooltip);
+        display: none;
+        position: absolute;
+        background-color: #008080;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        left: 150px;
+        top: 365px;
+    }
+
+    #estoque:hover::after {
+        display: block;
+    }
+
+    #estoque[data-tooltip]:hover::after {
+        content: attr(data-tooltip);
+        display: block;
+    }
+
+    #Venda::after {
+        width: 200px;
+        content: attr(data-tooltip);
+        display: none;
+        position: absolute;
+        background-color: #008080;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        left: 150px;
+        top: 405px;
+    }
+
+    #Venda:hover::after {
+        display: block;
+    }
+
+    #Venda[data-tooltip]:hover::after {
+        content: attr(data-tooltip);
+        display: block;
+    }
+
+    #rel::after {
+        width: 200px;
+        content: attr(data-tooltip);
+        display: none;
+        position: absolute;
+        background-color: #008080;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        left: 150px;
+        top: 445px;
+    }
+
+    #rel:hover::after {
+        display: block;
+    }
+
+    #rel[data-tooltip]:hover::after {
+        content: attr(data-tooltip);
+        display: block;
+    }
+
+    #sea {
+        position: absolute;
+        margin-top: 30px;
+        margin-left: 3px;
+        color: #fff;
+        font-size: 10px;
+    }
+
+    #menuHeader {
+
+        margin-left: 10px;
+    }
+
+    #settingsHeader {
+
+        margin-left: -5px;
+    }
+
+    .logout-button {
+        font-size: 14px;
+        position: absolute;
+        bottom: 20px;
+        left: 15px;
+        padding: 10px;
+        border-radius: 30px;
+        background-color: #008080;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
 }
