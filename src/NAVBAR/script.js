@@ -18,6 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function temadapagina(){
+
+        const darkmode = localStorage.getItem('dark-mode') === 'true';
+        document.body.classList.toggle('dark-mode', darkmode);
+        checkbox.checked = darkmode;
+    }
+
     const menuHeader = document.getElementById('menuHeader');
     menuHeader.addEventListener('click', function() {
         toggleSubMenu('menu', 'menuIcon', 'bi-caret-down-fill');
@@ -30,7 +37,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const checkbox = document.getElementById('inputto');
     checkbox.addEventListener('change', function() {
-        const body = document.body;
-        body.classList.toggle('dark-mode', this.checked);
+        const ischecked = this.checked;
+        document.body.classList.toggle('dark-mode', ischecked);
+        localStorage.setItem('dark-mode', ischecked);
     });
+
+    temadapagina();
 });
