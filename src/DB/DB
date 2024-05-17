@@ -17,9 +17,9 @@ CREATE TABLE dados_paciente(
     contato_emergencia VARCHAR(120),
     cpf_responsavel VARCHAR(120),
     cep_paciente VARCHAR(40),
-    estado_civil VARCHAR(15),
-    sexo VARCHAR(15),
-    tipo_sanguineo VARCHAR(5),
+    endereco VARCHAR(120),
+    numero_endereco VARCHAR(15),
+    bairro VARCHAR(20),
     numero_responsavel VARCHAR(15)
 );
 
