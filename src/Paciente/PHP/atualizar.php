@@ -7,17 +7,13 @@ if (isset($_GET['id'])) {
     $id_paciente = $_GET['id'];
 
     // Recupere os dados do paciente do banco de dados
-    $sql = "SELECT * FROM dados_paciente WHERE cod_paciente = ?";
-    $stmt = $conexao->prepare($sql);
-    $stmt->bind_param("i", $id_paciente);
-    $stmt->execute();
-    $resultado = $stmt->get_result();
-
-    if ($resultado->num_rows > 0) {
-        $paciente = $resultado->fetch_assoc();
-    } else {
-        // Se não houver paciente com o ID fornecido, redirecione com uma mensagem de erro
-        header("Location: listar_pacientes.php?erro=" . urlencode("Paciente não encontrado"));
+    try {
+        $stmt = $pdo->prepare("SELECT * FROM dados_paciente WHERE cod_paciente = :id");
+        $stmt->execute([':id' => $id_paciente]);
+        $paciente = $stmt->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        // Se ocorrer um erro, redirecione com uma mensagem de erro
+        header("Location: listar_pacientes.php?erro=" . urlencode("Erro ao recuperar dados do paciente: " . $e->getMessage()));
         exit();
     }
 } else {
@@ -44,33 +40,57 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $numero_endereco = $_POST['numero_endereco'];
     $bairro = $_POST['bairro'];
     $numero_responsavel = $_POST['numero_responsavel'];
+    
+    try {
+        // Prepare a declaração SQL para atualização
+        $sql = "UPDATE dados_paciente SET
+                    nome_paciente = :nome,
+                    cpf_paciente = :cpf,
+                    rg_paciente = :rg,
+                    data_nascimento = :data_nascimento,
+                    nome_responsavel = :nome_responsavel,
+                    telefone_paciente = :telefone,
+                    carteira_convenio = :carteira_convenio,
+                    nacionalidade_paciente = :nacionalidade,
+                    contato_emergencia = :contato_emergencia,
+                    cpf_responsavel = :cpf_responsavel,
+                    cep_paciente = :cep,
+                    endereco = :endereco,
+                    numero_endereco = :numero_endereco,
+                    bairro = :bairro,
+                    numero_responsavel = :numero_responsavel
+                WHERE
+                    cod_paciente = :id";
+        $stmt = $pdo->prepare($sql);
 
-    // Prepare a declaração SQL para atualização
-    $sql = "UPDATE dados_paciente SET
-                nome_paciente = ?,
-                cpf_paciente = ?,
-                rg_paciente = ?,
-                data_nascimento = ?,
-                nome_responsavel = ?,
-                telefone_paciente = ?,
-                carteira_convenio = ?,
-                nacionalidade_paciente = ?,
-                contato_emergencia = ?,
-                cpf_responsavel = ?,
-                cep_paciente = ?,
-                endereco = ?,
-                numero_endereco = ?,
-                bairro = ?,
-                numero_responsavel = ?
-            WHERE
-                cod_paciente = ?";
-    $stmt = $conexao->prepare($sql);
-    $stmt->bind_param("sssssssssssssssi", $nome, $cpf, $rg, $data_nascimento, $nome_responsavel, $telefone, $carteira_convenio, $nacionalidade, $contato_emergencia, $cpf_responsavel, $cep, $endereco, $numero_endereco, $bairro, $numero_responsavel, $id_paciente);
-    $stmt->execute();
+        // Execute a declaração preparada
+        $stmt->execute([
+            ':id' => $id_paciente,
+            ':nome' => $nome,
+            ':cpf' => $cpf,
+            ':rg' => $rg,
+            ':data_nascimento' => $data_nascimento,
+            ':nome_responsavel' => $nome_responsavel,
+            ':telefone' => $telefone,
+            ':carteira_convenio' => $carteira_convenio,
+            ':nacionalidade' => $nacionalidade,
+            ':contato_emergencia' => $contato_emergencia,
+            ':cpf_responsavel' => $cpf_responsavel,
+            ':cep' => $cep,
+            ':endereco' => $endereco,
+            ':numero_endereco' => $numero_endereco,
+            ':bairro' => $bairro,
+            ':numero_responsavel' => $numero_responsavel
+        ]);
 
-    // Redirecione de volta à página de listagem com uma mensagem de sucesso
-    header("Location: listar_pacientes.php?sucesso=" . urlencode("Dados do paciente atualizados com sucesso"));
-    exit();
+        // Redirecione de volta à página de listagem com uma mensagem de sucesso
+        header("Location: listar_pacientes.php?sucesso=" . urlencode("Dados do paciente atualizados com sucesso"));
+        exit();
+    } catch (PDOException $e) {
+        // Se ocorrer um erro, redirecione com uma mensagem de erro
+        header("Location: listar_pacientes.php?erro=" . urlencode("Erro ao atualizar dados do paciente: " . $e->getMessage()));
+        exit();
+    }
 }
 ?>
 
@@ -131,5 +151,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         <button type="submit">Atualizar</button>
     </form>
+    <script src="../Paciente/JS/atualizar_paciente.js"></script>
 </body>
 </html>

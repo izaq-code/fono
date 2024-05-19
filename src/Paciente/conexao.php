@@ -4,13 +4,11 @@ $username = "root";
 $password = "";
 $dbname = "fono";
 
-$dsn = "mysql:host=$servername;dbname=$dbname;charset=utf8mb4";
+// Criar conexão
+$conexao = new mysqli($servername, $username, $password, $dbname);
 
-try {
-    $pdo = new PDO($dsn, $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo 'Connection failed: ' . $e->getMessage();
-    exit;
+// Checar conexão
+if ($conexao->connect_error) {
+    die("Conexão falhou: " . $conexao->connect_error);
 }
 ?>

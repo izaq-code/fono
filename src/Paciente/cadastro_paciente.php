@@ -21,45 +21,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $bairro = $_POST['bairro'];
     $numero_responsavel = $_POST['numero_responsavel'];
 
-    try {
-        // Prepare a declaração SQL para inserção
-        $sql = "INSERT INTO dados_paciente (
+    // Prepare a declaração SQL para inserção
+    $sql = "INSERT INTO dados_paciente (
                     nome_paciente, cpf_paciente, rg_paciente, data_nascimento, 
                     nome_responsavel, telefone_paciente, carteira_convenio, nacionalidade_paciente,
                     contato_emergencia, cpf_responsavel, cep_paciente, endereco, 
                     numero_endereco, bairro, numero_responsavel
                 ) VALUES (
-                    :nome, :cpf, :rg, :data_nascimento, 
-                    :nome_responsavel, :telefone, :convenio, :nacionalidade,
-                    :contato_emergencia, :cpf_responsavel, :cep, :endereco, 
-                    :numero_endereco, :bairro, :numero_responsavel
+                    ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
                 )";
-        $stmt = $pdo->prepare($sql);
+    $stmt = $conexao->prepare($sql);
 
+    if ($stmt) {
+        // Associe os parâmetros
+        $stmt->bind_param("sssssssssssssss", $nome, $cpf, $rg, $data_nascimento, $nome_responsavel, $telefone, $convenio, $nacionalidade, $contato_emergencia, $cpf_responsavel, $cep, $endereco, $numero_endereco, $bairro, $numero_responsavel);
+        
         // Execute a declaração preparada
-        $stmt->execute([
-            ':nome' => $nome,
-            ':cpf' => $cpf,
-            ':rg' => $rg,
-            ':data_nascimento' => $data_nascimento,
-            ':nome_responsavel' => $nome_responsavel,
-            ':telefone' => $telefone,
-            ':convenio' => $convenio,
-            ':nacionalidade' => $nacionalidade,
-            ':contato_emergencia' => $contato_emergencia,
-            ':cpf_responsavel' => $cpf_responsavel,
-            ':cep' => $cep,
-            ':endereco' => $endereco,
-            ':numero_endereco' => $numero_endereco,
-            ':bairro' => $bairro,
-            ':numero_responsavel' => $numero_responsavel
-        ]);
+        if ($stmt->execute()) {
+            echo "Inserção realizada com sucesso";
+        } else {
+            echo "Erro na execução da declaração: " . $stmt->error;
+        }
 
-        // Retorna uma mensagem de sucesso
-        echo "success";
-    } catch (PDOException $e) {
-        // Se ocorrer um erro, informe o usuário sobre o erro
-        echo "Erro ao cadastrar paciente: " . $e->getMessage();
+        // Feche a declaração
+        $stmt->close();
+    } else {
+        echo "Erro na preparação da declaração: " . $conexao->error;
     }
+
+    // Feche a conexão
+    $conexao->close();
 }
 ?>

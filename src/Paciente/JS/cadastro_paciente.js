@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("cadastro_paciente").addEventListener("submit", function(event) {
+    document.getElementById("cadastrar_paciente").addEventListener("submit", function(event) {
         event.preventDefault();
         
         var formData = new FormData(this);
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("mensagem").innerHTML = result;
             // Limpar o formulário após o cadastro bem-sucedido
             if (result.trim() === "success") {
-                document.getElementById("cadastro_paciente").reset();
+                document.getElementById("cadastrar_paciente").reset();
             }
         })
         .catch(error => {

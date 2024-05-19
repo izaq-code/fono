@@ -11,14 +11,21 @@ if (isset($_GET['mensagem'])) {
 }
 
 // Recupere a lista de pacientes do banco de dados
-try {
-    $stmt = $pdo->query("SELECT * FROM dados_paciente");
-    $pacientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    // Se ocorrer um erro, exiba uma mensagem de erro
-    $mensagem = "Erro ao recuperar pacientes: " . $e->getMessage();
+$sql = "SELECT * FROM dados_paciente";
+$resultado = $conexao->query($sql);
+
+// Verificar se a consulta retornou resultados
+if ($resultado->num_rows > 0) {
+    $pacientes = array();
+    while ($paciente = $resultado->fetch_assoc()) {
+        $pacientes[] = $paciente;
+    }
+} else {
+    // Se não houver pacientes, exiba uma mensagem
+    $mensagem = "Não há pacientes cadastrados.";
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
