@@ -1,21 +1,27 @@
 <?php
+
+require 'conexao.php'; // Arquivo com a conexão ao banco de dados
 session_start();
 
-// Configurações do Google
-$client_id = '686746649529-s1bjq6d0rjpl129etdr05ugps0n8a07b.apps.googleusercontent.com';
-$client_secret = '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';
-$redirect_uri = 'http://localhost/fono/src/Cadastro/PHP/cadastro-google.php'; // URL de redirecionamento autorizado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    $name = $_POST['name'];
+    $senha = $_POST['senha'];
+    
+    $insert = $pdo->prepare("INSERT INTO usuario (email, name, senha) VALUES (:email, :name, :senha)");
 
-// URL de autorização do Google
-$auth_url = 'https://accounts.google.com/o/oauth2/auth';
-$params = array(
-    'redirect_uri' => $redirect_uri,
-    'response_type' => 'code',
-    'client_id' => $client_id,
-    'scope' => 'email'
-);
+    $insert->execute([
+        'email' => $email,
+        'name' => $name,
+        'senha' => $senha
+    ]);
 
-// Redireciona para a página de login do Google
-header('Location: ' . $auth_url . '?' . http_build_query($params));
-exit;
+    if($insert -> rowCount() > 0) {
+        echo true;
+    } else {
+        echo false;
+    }
+
+    
+}
 ?>

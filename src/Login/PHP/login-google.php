@@ -36,8 +36,13 @@ if (isset($_GET['code'])) {
     $user = $query->fetch();
 
     if ($user) {
-        // Iniciar sessão do usuário
         $_SESSION['user'] = $user;
+        if (empty($user['password'])) {
+            // Usuário ainda não configurou uma senha
+            header('Location: col-senha.php');
+            exit;
+        }
+        // Iniciar sessão do usuário
         header('Location: http://localhost/fono/src/inicio/inicio.html'); // Redirecionar para a página inicial ou qualquer outra página desejada
     } else {
         header('Location: http://localhost/fono/src/Cadastro/PHP/error.php'); // Redirecionar para uma página de erro ou exibir uma mensagem de erro

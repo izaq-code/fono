@@ -46,10 +46,18 @@ if (isset($_GET['code'])) {
         ]);
 
         $_SESSION['user'] = $userinfo;
-        header('Location: http://localhost/fono/src/inicio/inicio.html');
-    } else {
-        header('Location: http://localhost/fono/src/Cadastro/PHP/error.php');
+        header('Location: col-senha.php');
+        exit;
     }
-    exit;
+    if($user){
+        if (empty($user['password'])) {
+            // Usuário ainda não configurou uma senha
+            header('Location: col-senha.php');
+            exit;
+        }
+        header('Location: http://localhost/fono/src/inicio/inicio.html');
+    }
+} else {
+    header('Location: http://localhost/fono/src/Cadastro/PHP/error.php');
 }
 ?>
