@@ -6,7 +6,7 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $name = $_POST['name'];
-    $senha = $_POST['senha'];
+    $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT);
     
     $insert = $pdo->prepare("INSERT INTO usuario (email, name, senha) VALUES (:email, :name, :senha)");
 
