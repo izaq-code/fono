@@ -31,7 +31,7 @@ function q() {
     //     }
     // }).then((result) => {
     //     if (result.isConfirmed) {
-    //         window.location.href = 'pag-principal.html';
+    //         window.location.href = 'http://localhost/fono/src/inicio/inicio.html';
     //     }
     // });
     window.location.href = 'http://localhost/fono/src/inicio/inicio.html';

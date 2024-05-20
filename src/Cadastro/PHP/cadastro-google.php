@@ -49,7 +49,7 @@ if (isset($_GET['code'])) {
         header('Location: col-senha.php');
         exit;
     }
-    if($user){
+    if ($user) {
         if (empty($user['senha'])) {
             // Usuário ainda não configurou uma senha
             header('Location: col-senha.php');
