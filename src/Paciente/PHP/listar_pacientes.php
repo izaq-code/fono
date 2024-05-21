@@ -1,33 +1,32 @@
 <?php
-// Incluindo o arquivo de conexão
+// Inclua o arquivo de conexão
 include 'conexao.php';
 
-// Consulta SQL para obter os pacientes
-$query = "SELECT * FROM dados_paciente";
-$resultado = $conn->query($query);
+// Inicialize uma variável para armazenar mensagens de erro ou sucesso
+$mensagem = '';
 
-// Verificar se houve erro na execução da consulta
-if (!$resultado) {
-    die('Erro na consulta: ' . $conn->error);
+// Verifique se há uma mensagem na URL (para exibir mensagens de erro ou sucesso)
+if (isset($_GET['mensagem'])) {
+    $mensagem = $_GET['mensagem'];
 }
 
-// Inicializando um array para armazenar os resultados
+// Recupere a lista de pacientes do banco de dados
+$sql = "SELECT * FROM dados_paciente";
+$resultado = $conexao->query($sql);
+
 $pacientes = array();
 
-// Verificando se a consulta retornou resultados
+// Verificar se a consulta retornou resultados
 if ($resultado->num_rows > 0) {
-    // Iterando sobre os resultados e adicionando cada paciente ao array
-    while ($linha = $resultado->fetch_assoc()) {
-        $pacientes[] = $linha;
+    while ($paciente = $resultado->fetch_assoc()) {
+        $pacientes[] = $paciente;
     }
 } else {
-    echo "Nenhum paciente encontrado.";
+    // Se não houver pacientes, exiba uma mensagem
+    $mensagem = "Não há pacientes cadastrados.";
 }
 
-// Fechando a conexão com o banco de dados
-$conn->close();
-
-// Retornando os pacientes como JSON
-header('Content-Type: application/json');
-echo json_encode($pacientes);
+// Retornar a lista de pacientes e a mensagem como um JSON
+echo json_encode(['pacientes' => $pacientes, 'mensagem' => $mensagem]);
 ?>
+
