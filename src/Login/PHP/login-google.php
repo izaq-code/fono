@@ -37,9 +37,9 @@ if (isset($_GET['code'])) {
 
     if ($user) {
         $_SESSION['user'] = $user;
-        if (empty($user['senha'])) {
+        if ($user['dados_enviados'] == false) {
             // Usuário ainda não configurou uma senha
-            header('Location: col-senha.php');
+            header('Location: col-dados.php');
             exit;
         }
         // Iniciar sessão do usuário
