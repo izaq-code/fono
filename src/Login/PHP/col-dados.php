@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
 <h2>Configurar Senha</h2>
-<form method="POST" action="col-senha.php">
+<form method="POST" action="col-dados.php">
     <label for="password">Senha:</label>
     <input type="password" id="password" name="password" required>
     <br>
