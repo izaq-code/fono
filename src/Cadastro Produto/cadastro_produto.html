@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Produto</title>
+</head>
+<body>
+    <form id="Cadastro_Produto">
+        <div class="foto-container">
+            <div class="label">FOTO DO PRODUTO</div>
+            <label class="foto" for="foto__input8" tabIndex="0">
+                <span class="foto__image"><i class="bi bi-plus-lg" id="a"></i></span>
+                <input type="file" name="foto_produto" id="foto__input8" class="foto__input" data-index="8">
+            </label><br><br>
+
+            <div class="input">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Nome" required><br><br>
+            </div>
+            <div class="input">
+                <label for="preco">Preço</label>
+                <input type="text" id="preco" name="preco" placeholder="Preço" required><br><br>
+            </div>
+            <div class="input">
+                <label for="categoria">Categoria</label>
+                <input type="text" id="categoria" name="categoria" placeholder="categoria" required><br><br>
+            </div>
+            <div class="input">
+                <label for="descricao">Descrição</label>
+                <input type="text" id="descricao" name="descricao" placeholder="Descrição" required>
+            </div>
+
+            <button class="cadastrar_produto" type="submit">Cadastrar</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../Cadastro Produto/JS/cadastro_produto.js"></script>
+</body>
+
+</html>
