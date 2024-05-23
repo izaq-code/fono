@@ -34,6 +34,14 @@ CREATE TABLE usuario (
     dados_enviados boolean DEFAULT false
 );
 
+CREATE TABLE cadastro_produto (
+    cod_produto INT PRIMARY KEY AUTO_INCREMENT,
+    imagem_do_produto VARCHAR(120),
+    nome_produto VARCHAR(120),
+    preco_produto REAL,
+    categoria_produto VARCHAR(80),
+    descricao_produto VARCHAR(150)
+);
 
 
 INSERT INTO dados_paciente (
