@@ -1,19 +1,18 @@
 $(document).ready(function() {
     function carregarPacientes() {
+
         $.ajax({
-            url: '../Paciente/PHP/listar_pacientes.php',
-            type: 'GET',
+            url: './PHP/listar_pacientes.php',
+            type: 'POST',
             dataType: 'json',
             success: function(data) {
                 const tabelaPacientes = $('#tabela-pacientes');
                 const mensagem = $('#mensagem');
 
-                // Verificar e exibir mensagem
                 if (data.mensagem) {
                     mensagem.text(data.mensagem);
                 }
 
-                // Preencher a tabela com os dados dos pacientes
                 if (data.pacientes.length > 0) {
                     data.pacientes.forEach(paciente => {
                         const row = `
@@ -35,7 +34,8 @@ $(document).ready(function() {
                                 <td>${paciente.bairro}</td>
                                 <td>${paciente.numero_responsavel}</td>
                                 <td>
-                                    <button><a href="atualizar.php?id=${paciente.cod_paciente}">Editar</a></button>
+                                <button onclick="editarPaciente(${paciente.cod_paciente})">Editar</button>
+                                    <button onclick="excluirPaciente(${paciente.cod_paciente})">Excluir</button>
                                 </td>
                             </tr>
                         `;
@@ -50,4 +50,29 @@ $(document).ready(function() {
     }
 
     carregarPacientes();
+
+    window.editarPaciente = function(id) {
+        // Redirecionar para a página de atualização com o ID do paciente na URL
+        window.location.href = `atualizar_paciente.html?id=${id}`;
+    };
+
+    // Função para excluir paciente
+    window.excluirPaciente = function(id) {
+        if (confirm('Tem certeza que deseja excluir este paciente?')) {
+            $.ajax({
+                url: './PHP/excluir_paciente.php',
+                type: 'POST',
+                data: { id: id },
+                success: function(response) {
+                    const data = JSON.parse(response);
+                    alert(data.mensagem);
+                    location.reload();
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.error('Erro ao excluir paciente:', textStatus, errorThrown);
+                }
+            });
+        }
+    };
+
 });
