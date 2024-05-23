@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Consulta</title>
+    <style>
+        * {
+            padding: 5px;
+        }
+
+        .quad {
+            background-color: gainsboro;
+            margin-top: 5px;
+            height: auto;
+            border: 1px solid gray;
+            border-radius: 5px;
+            width: auto;
+            max-width: 80%;
+
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <h1>Agendar Consulta</h1>
+    <form id="agendar">
+        <select id="nome">
+            <option value="" disabled selected>Escolha um paciente</option>
+        </select>
+        <input type="date" name="data" id="data">
+    </form>
+    <div class="quad" id="nomec"></div>
+    <div class="quad" id="cpf"></div>
+    <div class="quad" id="tel"></div>
+</body>
+<script src="JS/tabela.js"></script>
+<script src="JS/preencher-informacoes.js"></script>
+
+
+
+</html>
