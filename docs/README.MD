@@ -20,12 +20,19 @@ Aqui estão as tecnologias e linguagens utilizadas no desenvolvimento deste proj
   <img align="center" alt="Bootstrap" height="30" width="40" src="https://icongr.am/devicon/bootstrap-plain-wordmark.svg?size=138&color=6842ae">
   <img align="center" alt="MySQL" height="30" width="40" src="https://icongr.am/devicon/mysql-original-wordmark.svg?size=138&color=ffffff">
   <img align="center" alt="PHP" height="30" width="40" src="https://icongr.am/devicon/php-original.svg?size=138&color=ffffff">
-  <img align="center" alt="Fono-GoogleApi" height="25" width="40" src="https://icongr.am/devicon/google-original.svg?size=138&color=6842ae">
 </div><br>
 
 Estas tecnologias foram essenciais para criar uma aplicação web robusta e eficiente.
 
 
+<style>
+  table {
+    border-collapse: collapse;
+  }
+  td, th {
+    border: none;
+  }
+</style>
 
 ## 🤝 Integrantes
 

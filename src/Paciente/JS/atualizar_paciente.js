@@ -4,7 +4,7 @@ $(document).ready(function() {
     if (pacienteId) {
         // Carregar os dados do paciente para edição
         $.ajax({
-            url: './PHP/obter_paciente.php',
+            url: './PHP/get_paciente.php',
             type: 'POST',
             data: { id: pacienteId },
             dataType: 'json',
@@ -57,6 +57,7 @@ $(document).ready(function() {
                 dataType: 'json',
                 success: function(data) {
                     $('#mensagem').text(data.mensagem);
+                    window.location.href = 'listar_pacientes.html';
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.error('Erro ao atualizar paciente:', textStatus, errorThrown);
