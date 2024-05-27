@@ -38,11 +38,68 @@ CREATE TABLE cadastro_produto (
     cod_produto INT PRIMARY KEY AUTO_INCREMENT,
     imagem_do_produto VARCHAR(120),
     nome_produto VARCHAR(120),
-    preco_produto REAL,
+    preco_produto FLOAT,
     categoria_produto VARCHAR(80),
     descricao_produto VARCHAR(150)
 );
 
+CREATE TABLE fonoaudiologo (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    especializacao VARCHAR(255),
+    contato VARCHAR(255)
+);
+
+CREATE TABLE horarios_padrao (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    horario TIME NOT NULL
+);
+
+CREATE TABLE horarios_disponiveis (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fono_id INT,
+    horario TIME,
+    preenchido boolean DEFAULT false,
+    FOREIGN KEY (fono_id) REFERENCES fonoaudiologo(id) on delete cascade on update cascade
+)engine = Innodb;
+
+-- triggers
+
+
+DELIMITER //
+
+CREATE TRIGGER after_fono_insert
+AFTER INSERT ON fonoaudiologo
+FOR EACH ROW
+BEGIN
+    DECLARE done BOOLEAN DEFAULT FALSE;
+    DECLARE cur_time TIME;
+    DECLARE cur_cursor CURSOR FOR
+        SELECT horario FROM horarios_padrao;
+
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+    OPEN cur_cursor;
+    read_loop: LOOP
+        FETCH cur_cursor INTO cur_time;
+        IF done THEN
+            LEAVE read_loop;
+        END IF;
+        INSERT INTO horarios_disponiveis (fono_id, horario) VALUES (NEW.id, cur_time);
+    END LOOP;
+    CLOSE cur_cursor;
+END//
+
+DELIMITER ;
+
+
+
+-- valores de inserção padrão (ATENÇÃO: SEM ISSO NÃO FUNCIONA)
+
+INSERT INTO horarios_padrao (horario) VALUES
+('09:00'), ('10:00'), ('11:00'), ('13:00'), ('14:00'), ('15:00'), ('16:00');
+
+-- massa de dados
 
 INSERT INTO dados_paciente (
     nome_paciente, cpf_paciente, rg_paciente, data_nascimento, 
