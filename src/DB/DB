@@ -37,6 +37,7 @@ CREATE TABLE usuario (
 CREATE TABLE cadastro_produto (
     cod_produto INT PRIMARY KEY AUTO_INCREMENT,
     imagem_do_produto VARCHAR(120),
+    quantidade_produto INT,
     nome_produto VARCHAR(120),
     preco_produto FLOAT,
     categoria_produto VARCHAR(80),
