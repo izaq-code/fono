@@ -2,6 +2,7 @@ $(document).ready(function(){
     $('#cadastro_paciente').submit(function(e){
         e.preventDefault();
 
+
         var nome = $('#nome').prop('value');
         var cpf = $('#cpf').prop('value');
         var rg = $('#rg').prop('value');
@@ -36,13 +37,20 @@ $(document).ready(function(){
             numero_responsavel: numero_responsavel,
         }
 
+        var Data = $(this).serialize();
+
         $.ajax({
             type: 'POST',
             url: './PHP/cadastro_paciente.php',
             data: Data,
             success: function (response){
-            console.log(response);
-           
+                $('#mensagem').text(response).fadeIn().delay(2000).fadeOut();
+                console.log("Mensagem exibida com sucesso.");
+                $('#cadastro_paciente')[0].reset();
+                console.log("Campos do formulário resetados.");
+            },
+            error: function(xhr, status, error) {
+                console.error("Erro ao enviar requisição AJAX:", error);
             }
         });
     });

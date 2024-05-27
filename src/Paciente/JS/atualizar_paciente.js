@@ -1,15 +1,15 @@
 $(document).ready(function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const pacienteId = urlParams.get('id');
-    console.log(pacienteId);
+    var pacienteId = localStorage.getItem('pacienteId');
 
-    function carregarDadosPaciente(id) {
+    if (pacienteId) {
+        // Carregar os dados do paciente para edição
         $.ajax({
-            url: '../PHP/obter_paciente.php',
+            url: './PHP/obter_paciente.php',
             type: 'POST',
-            data: { id: id },
+            data: { id: pacienteId },
+            dataType: 'json',
             success: function(data) {
-                if (data.sucesso) {
+                if (data.paciente) {
                     $('#id').val(data.paciente.cod_paciente);
                     $('#nome').val(data.paciente.nome_paciente);
                     $('#cpf').val(data.paciente.cpf_paciente);
@@ -26,34 +26,44 @@ $(document).ready(function() {
                     $('#numero_endereco').val(data.paciente.numero_endereco);
                     $('#bairro').val(data.paciente.bairro);
                     $('#numero_responsavel').val(data.paciente.numero_responsavel);
+
+                    // Preencher os demais campos do formulário com os dados do paciente aqui
                 } else {
-                    $('#mensagem').text(data.mensagem);
+                    $('#mensagem').text('Paciente não encontrado');
                 }
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                console.error('Erro ao carregar dados do paciente:', textStatus, errorThrown);
+                console.error('Erro ao obter paciente:', textStatus, errorThrown);
             }
         });
+
+        // Submeter o formulário de atualização
+        $('#atualizar_paciente').submit(function(event) {
+            event.preventDefault();
+
+            // Verificar se o campo de ID está preenchido
+            var id = $('#id').val();
+            if (!id) {
+                $('#mensagem').text('ID do paciente não fornecido');
+                return;
+            }
+
+            var formData = $(this).serialize();
+
+            $.ajax({
+                url: './PHP/atualizar_paciente.php',
+                type: 'POST',
+                data: formData,
+                dataType: 'json',
+                success: function(data) {
+                    $('#mensagem').text(data.mensagem);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.error('Erro ao atualizar paciente:', textStatus, errorThrown);
+                }
+            });
+        });
+    } else {
+        $('#mensagem').text('ID do paciente não fornecido');
     }
-
-    carregarDadosPaciente(pacienteId);
-
-    $('#atualizar_paciente').submit(function(e) {
-        e.preventDefault();
-
-        var dados = $(this).serialize();
-
-        $.ajax({
-            type: 'POST',
-            url: '../PHP/atualizar_paciente.php',
-            data: dados,
-            success: function(response) {
-                var result = JSON.parse(response);
-                $('#mensagem').text(result.mensagem);
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                console.error('Erro ao atualizar paciente:', textStatus, errorThrown);
-            }
-        });
-    });
 });

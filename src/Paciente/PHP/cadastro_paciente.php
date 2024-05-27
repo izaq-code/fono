@@ -23,10 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 contato_emergencia, cpf_responsavel, cep_paciente, endereco, numero_endereco, bairro, 
                 numero_responsavel) VALUES ('$nome', '$cpf', '$rg', '$data_nascimento', '$nome_responsavel', '$telefone', '$carteira_convenio', '$nacionalidade', '$contato_emergencia', '$cpf_responsavel', '$cep', '$endereco', '$numero_endereco', '$bairro', '$numero_responsavel')";
     
- if ($conexao->query($sql) === TRUE) {
-    echo "Inserido";
- } else {
-    echo "Não inserido";
- }
+    if ($conexao->query($sql) === TRUE) {
+      echo "Paciente cadastrado com sucesso!";
+  } else {
+      echo "Erro ao cadastrar paciente.";
+  }
 }
 ?>
