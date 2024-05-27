@@ -70,10 +70,6 @@ CREATE TABLE datas (
 
 )engine = Innodb;
 
-SELECT datas.data 'data'
-    FROM datas inner join conexao_h_d ON
-    datas.id = conexao_h_d.id_d
-
 CREATE TABLE conexao_h_d (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_h int,
