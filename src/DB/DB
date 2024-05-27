@@ -37,6 +37,7 @@ CREATE TABLE usuario (
 CREATE TABLE cadastro_produto (
     cod_produto INT PRIMARY KEY AUTO_INCREMENT,
     imagem_do_produto VARCHAR(120),
+    quantidade_produto INT,
     nome_produto VARCHAR(120),
     preco_produto FLOAT,
     categoria_produto VARCHAR(80),
@@ -59,9 +60,26 @@ CREATE TABLE horarios_disponiveis (
     id INT AUTO_INCREMENT PRIMARY KEY,
     fono_id INT,
     horario TIME,
-    preenchido boolean DEFAULT false,
     FOREIGN KEY (fono_id) REFERENCES fonoaudiologo(id) on delete cascade on update cascade
+) engine = Innodb;
+
+CREATE TABLE datas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    data date,
+    fono_id INT,
+    FOREIGN KEY (fono_id) REFERENCES fonoaudiologo(id) on delete cascade on update cascade
+
 )engine = Innodb;
+
+CREATE TABLE conexao_h_d (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_h int,
+    id_d int,
+    preenchido boolean,  
+    FOREIGN KEY (id_h) REFERENCES horarios_disponiveis(id) on delete cascade on update cascade,
+    FOREIGN KEY (id_d) REFERENCES datas(id) on delete cascade on update cascade
+) engine = Innodb; 
+
 
 -- triggers
 
@@ -100,6 +118,13 @@ INSERT INTO horarios_padrao (horario) VALUES
 ('09:00'), ('10:00'), ('11:00'), ('13:00'), ('14:00'), ('15:00'), ('16:00');
 
 -- massa de dados
+
+INSERT INTO fonoaudiologo (nome, especializacao, contato) VALUES
+('Ana Silva', 'Audiologia', 'ana.silva@example.com'),
+('Pedro Santos', 'Linguagem Infantil', 'pedro.santos@example.com'),
+('Mariana Oliveira', 'Audiologia', 'mariana.oliveira@example.com'),
+('Carlos Costa', 'Fonoterapia', 'carlos.costa@example.com');
+
 
 INSERT INTO dados_paciente (
     nome_paciente, cpf_paciente, rg_paciente, data_nascimento, 
