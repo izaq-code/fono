@@ -38,7 +38,7 @@ Estas tecnologias foram essenciais para criar uma aplicação web robusta e efic
 
 Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
-<table>
+<table style="border-collapse: collapse;">
   <tr>
     <td align="center">
       <a href="#" title="defina o titulo do link">
