@@ -61,7 +61,21 @@ CREATE TABLE horarios_disponiveis (
     horario TIME,
     preenchido boolean DEFAULT false,
     FOREIGN KEY (fono_id) REFERENCES fonoaudiologo(id) on delete cascade on update cascade
-)engine = Innodb;
+) engine = Innodb;
+
+CREATE TABLE datas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    data date
+);
+
+CREATE TABLE conexao_h_d (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_h int,
+    id_d int,
+    FOREIGN KEY (id_h) REFERENCES horarios_disponiveis(id) on delete cascade on update cascade,
+    FOREIGN KEY (id_d) REFERENCES datas(id) on delete cascade on update cascade
+) engine = Innodb; 
+
 
 -- triggers
 
