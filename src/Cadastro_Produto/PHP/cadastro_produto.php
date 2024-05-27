@@ -2,6 +2,7 @@
  include_once ("../../assets/conexao.php");
 
  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $quantidade = $_POST['quantidade'];
     $nome = $_POST['nome'];
     $preco = $_POST['preco'];
     $categoria = $_POST['categoria'];
@@ -19,8 +20,8 @@
     echo "A requisição não foi feita corretamente.";
 }
 
-    $sql = "INSERT INTO cadastro_produto (imagem_do_produto, nome_produto, preco_produto, categoria_produto, 
-                descricao_produto) VALUES ('$nomeArquivo', '$nome', '$preco', '$categoria', '$descricao')";
+    $sql = "INSERT INTO cadastro_produto (imagem_do_produto, quantidade_produto, nome_produto, preco_produto, categoria_produto, 
+                descricao_produto) VALUES ('$nomeArquivo', '$quantidade', '$nome', '$preco', '$categoria', '$descricao')";
     
  if ($conexao->query($sql) === TRUE) {
     echo "Produto cadastrado com sucesso !!";

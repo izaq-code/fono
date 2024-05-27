@@ -14,11 +14,13 @@ $(document).ready(function(){
             formData.append(inputName, inputFile.files[0]);
         }
 
+        var quantidade = $('#quantidade').val();
         var nome = $('#nome').val();
         var preco = $('#preco').val().replace(',' , '.');
         var categoria = $('#categoria').val();
         var descricao = $('#descricao').val();
 
+        formData.append('quantidade', quantidade);
         formData.append('nome', nome);
         formData.append('preco', preco);
         formData.append('categoria', categoria);
