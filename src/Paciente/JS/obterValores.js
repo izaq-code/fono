@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     $(document).ready(function () {
         $.ajax({
             type: 'POST',
-            url: '../PHP/exibirValores.php',
+            url: '../PHP/obterValores.php',
             data: {
                 selecionado: selecionado
             },

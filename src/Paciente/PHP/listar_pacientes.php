@@ -5,9 +5,10 @@ include ('../../assets/conexao.php');
 // Inicialize uma variável para armazenar mensagens de erro ou sucesso
 $mensagem = '';
 
-// Verifique se há uma mensagem na URL (para exibir mensagens de erro ou sucesso)
-if (isset($_POST['mensagem'])) {
-    $mensagem = $_POST['mensagem'];
+// Verifique se há um parâmetro na URL indicando que um paciente foi atualizado
+if (isset($_GET['atualizado']) && $_GET['atualizado'] == 'true') {
+    // Atualize a mensagem de sucesso
+    $mensagem = "Paciente atualizado com sucesso!";
 }
 
 // Recupere a lista de pacientes do banco de dados

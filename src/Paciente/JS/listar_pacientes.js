@@ -52,8 +52,9 @@ $(document).ready(function() {
     carregarPacientes();
 
     window.editarPaciente = function(id) {
-        // Redirecionar para a página de atualização com o ID do paciente na URL
-        window.location.href = `atualizar_paciente.html?id=${id}`;
+        // Armazenar o ID no localStorage e redirecionar para a página de atualização
+        localStorage.setItem('pacienteId', id);
+        window.location.href = 'atualizar_paciente.html';
     };
 
     // Função para excluir paciente
