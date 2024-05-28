@@ -35,11 +35,12 @@
       <select id="fono">
         <option value="" disabled selected>Escolha um fonoaudiólogo</option>
       </select>
-      <input type="date" name="data" id="data"  max="9999-12-31">
-  
+      
       <select id="hora">
         <option value="" disabled selected>Escolha um horário</option>
       </select>
+      
+      <input type="date" name="data" id="data"  max="9999-12-31">
 
       <button type="submit">agendar</button>
     </form>
@@ -48,30 +49,8 @@
   <script src="JS/tabela-fono.js"></script>
   <script src="JS/preencher-informacoes.js"></script>
   <script src="JS/preencher-fono.js"></script>
+  <script src="JS/preencher-datas.js"></script>
+  <script src="JS/datas-anteriores-false.js"></script>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    var input = document.getElementById('data');
-    
-    // Obter a data atual em formato de data ISO (YYYY-MM-DD)
-    var dataAtual = new Date().toISOString().split('T')[0];
-    
-    // Definir a data mínima como a data atual
-    input.min = dataAtual;
 
-    // Datas para desabilitar
-    var datasIndisponiveis = ["2024-06-01", "2024-06-10", "2024-06-20"];
-    
-    // Adicionar um ouvinte de evento para controlar a seleção da data
-    input.addEventListener('input', function() {
-        var dataSelecionada = new Date(this.value);
-        
-        // Verificar se a data selecionada está na lista de datas indisponíveis
-        if (datasIndisponiveis.includes(this.value)) {
-            this.value = ''; // Limpar o valor selecionado
-        }
-    });
-});
-
-  </script>
 </html>

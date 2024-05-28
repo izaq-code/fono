@@ -5,7 +5,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $cod = $_POST['selecionado'];
     
     $sql = $pdo->prepare("SELECT horarios_disponiveis.horario AS hora,
-                                 horarios_disponiveis.id AS cod
+                                 horarios_disponiveis.id AS cod,
+                                 fonoaudiologo.id AS id
                             FROM horarios_disponiveis 
                            INNER JOIN fonoaudiologo ON fonoaudiologo.id = horarios_disponiveis.fono_id
                            WHERE fonoaudiologo.id = :cod");
