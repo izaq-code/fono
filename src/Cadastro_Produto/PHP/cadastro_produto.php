@@ -7,7 +7,7 @@
     $preco = $_POST['preco'];
     $categoria = $_POST['categoria'];
     $descricao = $_POST['descricao'];
-    $diretorio = "../../Imagens_produto/";
+    $diretorio = "../../Exibir_Produto/Imagens_produto/";
 
     $nomeArquivo = $diretorio . basename($_FILES["foto_produto"]["name"]);
 
