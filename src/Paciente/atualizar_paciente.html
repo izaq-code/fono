@@ -3,79 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/padrao.css">
+    <link rel="stylesheet" href="atualizar_paciente.css">
     <title>Fono | Atualizar Paciente</title>
 </head>
 <body>
     <div class="container-atualizar">
         <form id="atualizar_paciente">
+            <div id="mensagem"></div>
+            <div class="login-titulo">Atualizar Paciente</div> 
             <div class="form-atualizar">
-
-                <div class="login-titulo">Atualizar Paciente</div> 
                 <input type="hidden" id="id" name="id">
                 <div class="input">
-                    <input type="text" id="nome" name="nome" placeholder="Nome" required>
+                    <input type="text" id="nome" name="nome" required>
                     <label for="nome">Nome</label>
                 </div>
                 <div class="input">
-                    <input type="text" id="cpf" name="cpf" placeholder="CPF" required>
+                    <input type="text" id="cpf" name="cpf" required>
                     <label for="cpf">CPF</label>
                 </div>
                 <div class="input">
-                    <input type="text" id="rg" name="rg" placeholder="RG" required>
+                    <input type="text" id="rg" name="rg" required>
                     <label for="rg">RG</label>
                 </div>
                 <div class="input">
-                    <input type="date" id="data_nascimento" name="data_nascimento" placeholder="Data de Nascimento" required>
+                    <input type="date" id="data_nascimento" name="data_nascimento" required>
                     <label for="data_nascimento">Data de Nascimento</label>
                 </div>
                 <div class="input">
-                    <input type="text" id="nome_responsavel" name="nome_responsavel" placeholder="Nome do responsável" required>
+                    <input type="text" id="nome_responsavel" name="nome_responsavel" required>
                     <label for="nome_responsavel">Nome do responsável</label>
                 </div>
                 <div class="input">
-                    <input type="text" id="telefone" name="telefone" placeholder="Telefone" required>
+                    <input type="text" id="telefone" name="telefone" required>
                     <label for="telefone">Telefone</label>
                 </div>
                 <div class="input">
-                    <input type="text" id="carteira_convenio" name="carteira_convenio" placeholder="Carteira de convênio" required>
+                    <input type="text" id="carteira_convenio" name="carteira_convenio" required>
                     <label for="carteira_convenio">Carteira de convênio</label>
                 </div>
                 <div class="input">
-                    <input type="text" id="nacionalidade" name="nacionalidade" placeholder="Nacionalidade" required>
+                    <input type="text" id="nacionalidade" name="nacionalidade" required>
                     <label for="nacionalidade">Nacionalidade</label>
                 </div>
                 <div class="input">
-                    <input type="text" id="contato_emergencia" name="contato_emergencia" placeholder="Contato de emergência" required>
+                    <input type="text" id="contato_emergencia" name="contato_emergencia"required>
                     <label for="contato_emergencia">Contato de emergência</label>
                 </div>
                 <div class="input">
-                    <input type="text" id="cpf_responsavel" name="cpf_responsavel" placeholder="CPF do responsável" required>
+                    <input type="text" id="cpf_responsavel" name="cpf_responsavel" required>
                     <label for="cpf_responsavel">CPF do responsável</label>
                 </div>
                 <div class="input">
-                    <input type="text" id="cep" name="cep" placeholder="CEP" required>
+                    <input type="text" id="cep" name="cep" required>
                     <label for="cep">CEP</label>
                 </div>
                 <div class="input">
-                    <input type="text" id="endereco" name="endereco" placeholder="Endereço" required>
+                    <input type="text" id="endereco" name="endereco" required>
                     <label for="endereco">Endereço</label>
                 </div>
                 <div class="input">
-                    <input type="text" id="numero_endereco" name="numero_endereco" placeholder="Número" required>
+                    <input type="text" id="numero_endereco" name="numero_endereco" required>
                     <label for="numero_endereco">Número</label>
                 </div>
                 <div class="input">
-                    <input type="text" id="bairro" name="bairro" placeholder="Bairro" required>
+                    <input type="text" id="bairro" name="bairro"required>
                     <label for="bairro">Bairro</label>
                 </div>
                 <div class="input">
-                    <input type="text" id="numero_responsavel" name="numero_responsavel" placeholder="Número do responsável" required>
+                    <input type="text" id="numero_responsavel" name="numero_responsavel" required>
                     <label for="numero_responsavel">Número do responsável</label>
                 </div>
-                <button id="" type="submit">Atualizar</button>
+            </div>
+            <div id="container-botao-atulizar-paciente">
+                <button id="botao-atualizar-paciente" type="submit">Atualizar</button>
             </div>
         </form>
-        <div id="mensagem"></div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
