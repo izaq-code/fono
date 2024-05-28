@@ -24,10 +24,12 @@ function ex(dada){
     console.log('me chamaram')
     
     u = $('#hora');
+    u.empty();
+    u.append('<option value="" disabled selected>Escolha um horário</option>');
     
     for (let key in dada) {
         if (dada.hasOwnProperty(key)) {
-            var tab = "<option value='" + dada[key]['cod'] + "'>" + dada[key]['hora'] + "</option>";
+            var tab = "<option value='" + dada[key]['cod'] + "' data-id='"+ dada[key]['id'] +"'>" + dada[key]['hora'] + "</option>";
             u.append(tab);
         }
     }    
