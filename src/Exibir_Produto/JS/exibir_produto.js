@@ -2,7 +2,7 @@ function listarProdutos() {
     var container = $('#dados_exibidos');
 
     $.ajax({
-        url: './PHP/exibir_produto.php',
+        url: '../PHP/exibir_produto.php',
         type: 'GET',
         dataType: 'json',
         success: function(produtos) {
@@ -13,8 +13,10 @@ function listarProdutos() {
 
                 var nome = $('<h3>').text(produto.nome);
                 item.append(nome);
-
-                var imagem = $('<img>').attr('src', produto.imagem).css('maxWidth', '100px');
+            
+                var  imgContainer = $('<div>').addClass('img-conteiner');
+                var imagem = $('<img>').attr('src', produto.imagem);
+                imgContainer.append(imagem);
                 item.append(imagem);
 
                 var preco = $('<p>').text('Preço: ' + produto.preco);

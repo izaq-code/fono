@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#dados_exibidos {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin-left: 150px
+}
+
+.produto {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.produto img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.produto h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.produto p {
+    margin: 5px 0;
+    color: #000000;
+}
+
