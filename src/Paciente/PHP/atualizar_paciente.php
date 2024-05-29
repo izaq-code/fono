@@ -1,6 +1,6 @@
 <?php
 // Incluir o arquivo de conexão com o banco de dados
-include_once('../../assets/conexao.php');
+include_once('../../assets/php/conexao.php');
 
 // Verificar se o método de requisição é POST
 // if ($_SERVER["REQUEST_METHOD"] == "POST") {

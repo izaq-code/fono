@@ -68,7 +68,6 @@ CREATE TABLE datas (
     data date,
     fono_id INT,
     FOREIGN KEY (fono_id) REFERENCES fonoaudiologo(id) on delete cascade on update cascade
-
 )engine = Innodb;
 
 CREATE TABLE conexao_h_d (
@@ -78,6 +77,18 @@ CREATE TABLE conexao_h_d (
     preenchido boolean,  
     FOREIGN KEY (id_h) REFERENCES horarios_disponiveis(id) on delete cascade on update cascade,
     FOREIGN KEY (id_d) REFERENCES datas(id) on delete cascade on update cascade
+) engine = Innodb; 
+
+CREATE TABLE consulta (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    detalhes VARCHAR(300),
+    num2 VARCHAR(18),
+    id_paciente INT,
+    id_fono INT,
+    id_data_con INT,
+    FOREIGN KEY (id_paciente) REFERENCES dados_paciente(cod_paciente) on delete cascade on update cascade,
+    FOREIGN KEY (id_fono) REFERENCES fonoaudiologo(id) on delete cascade on update cascade,
+    FOREIGN KEY (id_data_con) REFERENCES conexao_h_d(id) on delete cascade on update cascade
 ) engine = Innodb; 
 
 
