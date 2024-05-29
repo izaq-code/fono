@@ -1,6 +1,6 @@
 <?php
 // Inclua o arquivo de conexão
-include ('../../assets/conexao.php');
+include ('../../assets/php/conexao.php');
 
 // Inicialize uma variável para armazenar mensagens de erro ou sucesso
 $mensagem = '';

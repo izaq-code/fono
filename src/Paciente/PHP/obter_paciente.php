@@ -1,6 +1,6 @@
 <?php
 
-include ('../../assets/conexao.php');
+include ('../../assets/php/conexao.php');
 
 // Verifique se o ID do paciente foi enviado via POST
 if (isset($_POST['id'])) {

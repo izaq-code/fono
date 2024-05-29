@@ -32,9 +32,9 @@ body.light-mode .card-solicitacoes-container {
 }
 
 body.dark-mode .card-solicitacoes-container,
-body.dark-mode .solicitacoes-table,
-body.dark-mode .solicitacoes-table button {
+body.dark-mode .solicitacoes-table {
     color: rgb(255, 255, 255);
+    background-color: #444;
 }
 
 body.light-mode .card-solicitacoes-container,

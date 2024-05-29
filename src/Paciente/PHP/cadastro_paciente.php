@@ -1,5 +1,5 @@
 <?php
-include ('../../assets/conexao.php');
+include ('../../assets/php/conexao.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];

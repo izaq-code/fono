@@ -1,5 +1,5 @@
 <?php
-include ('../../assets/conexao.php');
+include ('../../assets/php/conexao.php');
 
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
