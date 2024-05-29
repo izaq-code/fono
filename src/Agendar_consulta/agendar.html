@@ -25,18 +25,19 @@
   <body>
     <h1>Agendar Consulta</h1>
     <form id="agendar">
-      <select id="nome">
+      <select id="nome" name="nome" >
         <option value="" disabled selected>Escolha um paciente</option>
       </select>
       <div class="quad" id="nomec"></div>
       <div class="quad" id="cpf"></div>
       <div class="quad" id="tel"></div>
-      <input type="text" placeholder="Novo número (opcional)" />
-      <select id="fono">
+      <input type="text" name="num2" placeholder="Novo número (opcional)" />
+      <input type="text" name="detalhes" placeholder="Detalhes da consulta" />
+      <select id="fono" name="fono" >
         <option value="" disabled selected>Escolha um fonoaudiólogo</option>
       </select>
       
-      <select id="hora">
+      <select id="hora" name="hora" >
         <option value="" disabled selected>Escolha um horário</option>
       </select>
       
@@ -51,6 +52,8 @@
   <script src="JS/preencher-fono.js"></script>
   <script src="JS/preencher-datas.js"></script>
   <script src="JS/datas-anteriores-false.js"></script>
+  <script src="JS/agendar.js"></script>
+
 
 
 </html>
