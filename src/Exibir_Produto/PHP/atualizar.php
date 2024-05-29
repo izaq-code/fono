@@ -3,10 +3,11 @@ include_once("../../assets/conexao.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
-    if (isset($_POST['cod_produto'])) {
-        $id = $_POST['cod_produto'];
+    if (isset($_POST['produto_id'])) {
+        
+        $id = $_POST['produto_id'];
 
-        $valor = "SELECT quantidade FROM cadastro_produto 
+        $valor = "SELECT quantidade_produto FROM cadastro_produto 
                                     WHERE cod_produto = $id";
         $resultado = $conexao->query($valor);
 
@@ -15,10 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($resultado->num_rows > 0) {
              
                 $row = $resultado->fetch_assoc();
-                $nova_quantidade = $row['quantidade'] + 1;
+                $nova_quantidade = $row['quantidade_produto'] + 1;
 
                
-        $sql = "UPDATE produtos SET quantidade = $nova_quantidade 
+        $sql = "UPDATE cadastro_produto SET quantidade_produto = $nova_quantidade 
                                 WHERE cod_produto = $id";
 
 
