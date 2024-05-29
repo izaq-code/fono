@@ -4,48 +4,6 @@ body {
     padding: 0;
 }
 
-body.light-mode {
-    background-color: #fff;
-    color: #333;
-}
-
-body.dark-mode {
-    background-color: #333;
-    color: #fff;
-}
-
-body.light-mode .navbar {
-    background-color: #d9d9d9;
-    color: #000;
-}
-
-body.dark-mode .navbar {
-    background-color: #444;
-    color: #fff;
-}
-
-body.dark-mode .solicitacoes-table tbody tr {
-    background-color: #444;
-}
-
-body.light-mode .solicitacoes-table tbody tr {
-    background-color: #cacaca;
-}
-
-body.light-mode .card-solicitacoes-container {
-    background-color: #cacaca;
-}
-
-body.dark-mode .card-solicitacoes-container,
-body.dark-mode .solicitacoes-table,
-body.dark-mode .solicitacoes-table button {
-    color: rgb(255, 255, 255);
-}
-
-body.light-mode .card-solicitacoes-container,
-body.light-mode .solicitacoes-table{
-    color: rgb(0, 0, 0);
-}
 
 .navbar {
     height: 96vh;

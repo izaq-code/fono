@@ -103,3 +103,14 @@ body {
         margin-left: 120px; 
     }
   }
+
+  .content1 {
+    margin-left: 240px; 
+    padding: 20px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .content1 {
+        margin-left: 120px; 
+    }
+  }
