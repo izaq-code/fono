@@ -6,23 +6,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
         submenu.classList.toggle('visible');
 
-
         if (submenu.classList.contains('visible')) {
-          
-            icon.className = ''; 
-            icon.classList.add('bi', newIconClass); 
+            icon.className = '';
+            icon.classList.add('bi', newIconClass);
         } else {
-         
-            icon.className = ''; 
-            icon.classList.add('bi', 'bi-caret-up-fill'); 
+            icon.className = '';
+            icon.classList.add('bi', 'bi-caret-up-fill');
         }
     }
 
-    function temadapagina(){
-
+    function temadapagina() {
         const darkmode = localStorage.getItem('dark-mode') === 'true';
-        document.body.classList.toggle('dark-mode', darkmode);
-        checkbox.checked = darkmode;
+        const lightmode = localStorage.getItem('light-mode') === 'true';
+        
+        if (darkmode) {
+            document.body.classList.add('dark-mode');
+            document.body.classList.remove('light-mode');
+        } else if (lightmode) {
+            document.body.classList.add('light-mode');
+            document.body.classList.remove('dark-mode');
+        }
+        checkbox.checked = darkmode || lightmode;
     }
 
     const menuHeader = document.getElementById('menuHeader');
@@ -32,14 +36,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const settingsHeader = document.getElementById('settingsHeader');
     settingsHeader.addEventListener('click', function() {
-        toggleSubMenu('settings', 'settingsIcon', 'bi-caret-down-fill'); 
+        toggleSubMenu('settings', 'settingsIcon', 'bi-caret-down-fill');
     });
 
     const checkbox = document.getElementById('inputto');
+
     checkbox.addEventListener('change', function() {
-        const ischecked = this.checked;
-        document.body.classList.toggle('dark-mode', ischecked);
-        localStorage.setItem('dark-mode', ischecked);
+        const isChecked = this.checked;
+
+        if (isChecked) {
+            document.body.classList.add('dark-mode');
+            document.body.classList.remove('light-mode');
+            localStorage.setItem('dark-mode', true);
+            localStorage.setItem('light-mode', false);
+        } else {
+            document.body.classList.add('light-mode');
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('dark-mode', false);
+            localStorage.setItem('light-mode', true);
+        }
     });
 
     temadapagina();

@@ -24,6 +24,29 @@ body.dark-mode .navbar {
     color: #fff;
 }
 
+body.dark-mode .solicitacoes-table tbody tr {
+    background-color: #444;
+}
+
+body.light-mode .solicitacoes-table tbody tr {
+    background-color: #cacaca;
+}
+
+body.light-mode .card-solicitacoes-container {
+    background-color: #cacaca;
+}
+
+body.dark-mode .card-solicitacoes-container,
+body.dark-mode .solicitacoes-table,
+body.dark-mode .solicitacoes-table button {
+    color: rgb(255, 255, 255);
+}
+
+body.light-mode .card-solicitacoes-container,
+body.light-mode .solicitacoes-table{
+    color: rgb(0, 0, 0);
+}
+
 .navbar {
     height: 96vh;
     width: 250px;
@@ -58,6 +81,7 @@ body.dark-mode .navbar {
     background-color: #008080;
     border-radius: 10px;
     padding: 10px;
+    width: 240px;
     color: #fff;
     font-weight: bold;
 }
