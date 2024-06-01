@@ -1,5 +1,5 @@
 <?php
- include_once ("../../assets/conexao.php");
+    include_once("../../assets/php/conexao.php");
 
  if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $quantidade = $_POST['quantidade'];

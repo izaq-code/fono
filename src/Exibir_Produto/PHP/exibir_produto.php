@@ -1,5 +1,5 @@
 <?php
-    include_once ("../../assets/conexao.php");
+    include_once("../../assets/php/conexao.php");
 
         $sql = "SELECT cod_produto, imagem_do_produto, nome_produto, preco_produto, quantidade_produto
                 FROM cadastro_produto";

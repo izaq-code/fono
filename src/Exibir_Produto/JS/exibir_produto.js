@@ -6,13 +6,12 @@ function listarProdutos() {
         var currentValue = parseInt(botaoQuantidade.val());
         botaoQuantidade.val(currentValue - 1);
     });
-
+    
     $(document).on('click', '.mais-btn', function () {
         var botaoQuantidade = $(this).prev('.quantidade-input');
         var currentValue = parseInt(botaoQuantidade.val());
         botaoQuantidade.val(currentValue + 1);
     });
-
 
     $.ajax({
         url: '../PHP/exibir_produto.php',
@@ -27,10 +26,10 @@ function listarProdutos() {
                 var nome = $('<h3>').text(produto.nome);
                 item.append(nome);
 
-                var imgContainer = $('<div>').addClass('img-conteiner');
+                var imgContainer = $('<div>').addClass('img-container');
                 var imagem = $('<img>').attr('src', produto.imagem);
                 imgContainer.append(imagem);
-                item.append(imagem);
+                item.append(imgContainer);
 
                 var preco = $('<p>').text('Preço: ' + produto.preco);
                 item.append(preco);
@@ -40,11 +39,11 @@ function listarProdutos() {
 
                 var divBotao = $('<div>').addClass('input-group');
                 var botaoMenos = $('<button>').addClass('menos-btn').attr('type', 'button').text('-');
-                var botaoQuantidade = $('<input>').addClass('quantidade-input').attr('type', 'text').val('0');
+                var botaoQuantidade = $('<input>').addClass('quantidade-input').attr('type', 'Number').val('0').data('id', produto.cod);
                 var botaoMais = $('<button>').addClass('mais-btn').attr('type', 'button').text('+');
 
                 var divConfirmacao = $('<div>').addClass('confirmacao-container');
-                var botaoConfirmar = $('<button>').addClass('confirmar-btn').attr('type', 'button').text('Confirmar');
+                var botaoConfirmar = $('<button>').addClass('confirmar-btn').attr('type', 'button').text('Confirmar').data('id', produto.cod);
                 var botaoCancelar = $('<button>').addClass('cancelar-btn').attr('type', 'button').text('Cancelar');
 
                 divConfirmacao.append(botaoConfirmar, botaoCancelar);
@@ -57,30 +56,36 @@ function listarProdutos() {
     });
 }
 
-
 $(document).ready(function () {
     listarProdutos();
 
-
-    $(document).on('click', '.confirmar-btn', function() {
-        var botaoQuantidade = $(this).siblings('.quantidade-input');
-        var novoValor = parseInt(botaoQuantidade.val());
-        var id = $(this).closest('.produto').find('.adicionar-estoque').data('cod');
-
-        $.ajax({
-            url: '../PHP/atualizar.php',
-            type: 'POST',
-            data: {
-                produto_id: id,
-                quantidade_nova: novoValor,
-            },
-            success: function (quantidade_nova) {
-
-            },
-            error: function (xhr, status, error) {
-                console.error("Erro ao atualizar quantidade: " + error);
-            }
-        });
+    $(document).on('click', '.cancelar-btn', function() {
+        var botaoQuantidade = $(this).closest('.produto').find('.quantidade-input');
+        botaoQuantidade.val(0);
     });
-})
+    
+    $(document).on('click', '.confirmar-btn', function() {
+        var id = $(this).data('id');
+        var botaoQuantidade = $(this).closest('.produto').find('.quantidade-input');
+        var valorQuantidade = parseInt(botaoQuantidade.val()); 
 
+        if (!isNaN(valorQuantidade)) {
+            $.ajax({
+                url: '../PHP/atualizar.php',
+                type: 'POST',
+                data: {
+                    produto_id: id,
+                    quantidade_nova: valorQuantidade,
+                },
+                success: function (response) {
+                    console.log(response);
+                },
+                error: function (xhr, status, error) {
+                    console.error("Erro ao atualizar quantidade: " + error);
+                }
+            });
+        } else {
+            console.error("Quantidade inválida.");
+        }
+    });
+});
