@@ -23,8 +23,9 @@ function listarProdutos() {
             produtos.forEach(function (produto) {
                 var item = $('<div>').addClass('produto');
 
-                var nome = $('<h3>').text(produto.nome);
+                var nome = $('<h3>').addClass('produto-nome').text(produto.nome); 
                 item.append(nome);
+
 
                 var imgContainer = $('<div>').addClass('img-container');
                 var imagem = $('<img>').attr('src', produto.imagem);
@@ -86,6 +87,19 @@ $(document).ready(function () {
             });
         } else {
             console.error("Quantidade inválida.");
+        }
+    });
+});
+
+ 
+$('#searchInput').on('keyup', function() {
+    var searchTerm = $(this).val().toLowerCase();
+    $('.produto').each(function() {
+        var nomeProduto = $(this).find('.produto-nome').text().toLowerCase();
+        if (nomeProduto.includes(searchTerm)) {
+            $(this).show();
+        } else {
+            $(this).hide();
         }
     });
 });
