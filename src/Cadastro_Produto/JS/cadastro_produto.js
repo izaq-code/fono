@@ -10,7 +10,6 @@ $(document).ready(function(){
         if (!inputFile || inputFile.files.length === 0) {
             console.error("O campo de imagem não foi encontrado ou está vazio.");
         } else {
-           
             formData.append(inputName, inputFile.files[0]);
         }
 
@@ -34,6 +33,10 @@ $(document).ready(function(){
             processData: false,
             success: function(response){
                 console.log(response);
+             
+                if (response.trim() == 'sucesso') {
+                    alert("Produto cadastrado com sucesso!");
+                }
             },
             error: function(xhr, status, error){
                 console.error(xhr.responseText);

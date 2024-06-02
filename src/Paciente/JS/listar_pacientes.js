@@ -48,21 +48,43 @@ $(document).ready(function() {
 
     // Função para excluir paciente
     window.excluirPaciente = function(id) {
-        if (confirm('Tem certeza que deseja excluir este paciente?')) {
-            $.ajax({
-                url: './PHP/excluir_paciente.php',
-                type: 'POST',
-                data: { id: id },
-                success: function(response) {
-                    const data = JSON.parse(response);
-                    alert(data.mensagem);
-                    location.reload();
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    console.error('Erro ao excluir paciente:', textStatus, errorThrown);
-                }
-            });
-        }
+        Swal.fire({
+            title: "Tem certeza?",
+            text: "Você realmente deseja excluir este paciente?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Sim, exclua!",
+            cancelButtonText: "Cancelar"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: './PHP/excluir_paciente.php',
+                    type: 'POST',
+                    data: { id: id },
+                    success: function(response) {
+                        const data = JSON.parse(response);
+                        Swal.fire({
+                            title: "Excluído!",
+                            text: data.mensagem,
+                            icon: "success"
+                        }).then(() => {
+                            location.reload();
+                        });
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error('Erro ao excluir paciente:', textStatus, errorThrown);
+                        Swal.fire({
+                            title: "Erro",
+                            text: "Ocorreu um erro ao tentar excluir o paciente.",
+                            icon: "error"
+                        });
+                    }
+                });
+            }
+        });
     };
+    
 
 });
