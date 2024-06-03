@@ -82,7 +82,7 @@ $(document).ready(function () {
                 },
                 success: function (response) {
                     console.log(response);
-                    location.reload();
+                    listarProdutos();
                 },
                 error: function (xhr, status, error) {
                     console.error("Erro ao atualizar quantidade: " + error);

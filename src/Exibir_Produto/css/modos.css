@@ -159,4 +159,5 @@ body.dark-mode #searchInput {
 body.dark-mode #peo {
     margin-left: -310px;
     position: absolute;
+    color: #777777;
 }
