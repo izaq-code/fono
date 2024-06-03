@@ -83,6 +83,7 @@ CREATE TABLE consulta (
     id INT AUTO_INCREMENT PRIMARY KEY,
     detalhes VARCHAR(300),
     num2 VARCHAR(18),
+    realizada boolean DEFAULT false,
     id_paciente INT,
     id_fono INT,
     id_data_con INT,
