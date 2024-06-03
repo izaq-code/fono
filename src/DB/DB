@@ -91,9 +91,7 @@ CREATE TABLE consulta (
     FOREIGN KEY (id_data_con) REFERENCES conexao_h_d(id) on delete cascade on update cascade
 ) engine = Innodb; 
 
-
 -- triggers
-
 
 DELIMITER //
 
