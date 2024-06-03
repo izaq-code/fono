@@ -68,17 +68,17 @@ for (let cor in cores) {
 
 for (let i = 1; i <= 9999; i++) {
     Nimbusmap[`padd-px-${i}`] = { property: 'padding', value: `${i * 10}px` };
-    Nimbusmap[`padd-percent-${i}`] = { property: 'padding', value: `${i * 10}%` };
+    Nimbusmap[`padd-cent-${i}`] = { property: 'padding', value: `${i * 10}%` };
     Nimbusmap[`marg-px-${i}`] = { property: 'margin', value: `${i * 10}px` };
     Nimbusmap[`marg-percent-${i}`] = { property: 'margin', value: `${i * 10}%` };
     Nimbusmap[`marg-top-px-${i}`] = { property: 'marginTop', value: `${i * 10}px` };
-    Nimbusmap[`marg-top-percent-${i}`] = { property: 'marginTop', value: `${i * 10}%` };
+    Nimbusmap[`marg-top-cent-${i}`] = { property: 'marginTop', value: `${i * 10}%` };
     Nimbusmap[`marg-bottom-px-${i}`] = { property: 'marginBottom', value: `${i * 10}px` };
-    Nimbusmap[`marg-bottom-percent-${i}`] = { property: 'marginBottom', value: `${i * 10}%` };
+    Nimbusmap[`marg-bottom-cent-${i}`] = { property: 'marginBottom', value: `${i * 10}%` };
     Nimbusmap[`marg-left-px-${i}`] = { property: 'marginLeft', value: `${i * 10}px` };
-    Nimbusmap[`marg-left-percent-${i}`] = { property: 'marginLeft', value: `${i * 10}%` };
+    Nimbusmap[`marg-left-cent-${i}`] = { property: 'marginLeft', value: `${i * 10}%` };
     Nimbusmap[`marg-right-px-${i}`] = { property: 'marginRight', value: `${i * 10}px` };
-    Nimbusmap[`marg-right-percent-${i}`] = { property: 'marginRight', value: `${i * 10}%` };
+    Nimbusmap[`marg-right-cent-${i}`] = { property: 'marginRight', value: `${i * 10}%` };
     Nimbusmap[`t-width-px-${i}`] = { property: 'width', value: `${i * 10}px` };
     Nimbusmap[`t-height-px-${i}`] = { property: 'height', value: `${i * 10}px` };
     Nimbusmap[`t-width-cent-${i}`] = { property: 'width', value: `${i * 10}%` };
@@ -108,6 +108,27 @@ Nimbusmap['aling-div'] = [
     { property: 'align-items', value: 'center' },
     { property: 'justify-content', value: 'center' },
 ];
+
+
+//grid
+
+for (let i = 1; i <= 9999; i++) {
+    for (let j = 1; j <= 9999; j++) {
+        Nimbusmap[`grid-columns-${i}-${j}`] = [
+            { property: 'display', value: 'grid' },
+            { property: 'grid-template-columns', value: `repeat(auto-fit, minmax(${i * 10}px, ${j}fr))` }
+        ];
+    }
+}
+
+for (let i = 1; i <= 9999; i++) {
+    Nimbusmap[`gap-px-${i}`] = { property: 'gap', value: `${i * 10}px` };
+    Nimbusmap[`gap-cent-${i}`] = { property: 'gap', value: `${i * 10}%` };
+    Nimbusmap[`max-height-px-${i}`] = { property: 'max-height', value: `${i * 10}px` };
+    Nimbusmap[`max-height-cent-${i}`] = { property: 'max-height', value: `${i * 10}%` };
+    Nimbusmap[`max-width-px-${i}`] = { property: 'max-width', value: `${i * 10}px` };
+    Nimbusmap[`max-width-cent-${i}`] = { property: 'max-width', value: `${i * 10}%` };
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const nimbus = new Nimbus();

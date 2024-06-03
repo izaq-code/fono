@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.classList.add('light-mode');
             document.body.classList.remove('dark-mode');
         }
-        checkbox.checked = darkmode || lightmode;
+        checkbox.checked = darkmode; 
     }
 
     const menuHeader = document.getElementById('menuHeader');
