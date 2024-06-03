@@ -54,6 +54,7 @@
 }
 
 #foto_container {
+overflow: hidden;
     width: 200px;
     height: 200px;
     border: 2px solid #ccc;
@@ -73,11 +74,21 @@
 
 #foto_placeholder {
     font-size: 40px;
-    color: #333;
+    color: #999;
 }
 
 
 #foto_container i {
     font-size: 40px;
-    color: #333;
+    color: #999;
 }
+
+.foto__imagem{
+overflow: hidden;
+
+}
+.foto__img{
+margin-top: 10px;
+    max-width: 100%;
+    
+    } 

@@ -1,17 +1,20 @@
+
+$(document).on('click', '.menos-btn', function () {
+    var botaoQuantidade = $(this).next('.quantidade-input');
+    var currentValue = parseInt(botaoQuantidade.val());
+    botaoQuantidade.val(currentValue - 1);
+});
+
+$(document).on('click', '.mais-btn', function () {
+    var botaoQuantidade = $(this).prev('.quantidade-input');
+    var currentValue = parseInt(botaoQuantidade.val());
+    botaoQuantidade.val(currentValue + 1);
+});
+
+
+
 function listarProdutos() {
     var container = $('#dados_exibidos');
-
-    $(document).on('click', '.menos-btn', function () {
-        var botaoQuantidade = $(this).next('.quantidade-input');
-        var currentValue = parseInt(botaoQuantidade.val());
-        botaoQuantidade.val(currentValue - 1);
-    });
-    
-    $(document).on('click', '.mais-btn', function () {
-        var botaoQuantidade = $(this).prev('.quantidade-input');
-        var currentValue = parseInt(botaoQuantidade.val());
-        botaoQuantidade.val(currentValue + 1);
-    });
 
     $.ajax({
         url: '../PHP/exibir_produto.php',

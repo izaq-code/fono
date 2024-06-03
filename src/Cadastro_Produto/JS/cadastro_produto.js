@@ -34,9 +34,16 @@ $(document).ready(function(){
             success: function(response){
                 console.log(response);
              
-                if (response.trim() == 'sucesso') {
-                    alert("Produto cadastrado com sucesso!");
-                }
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Produto cadastrado com sucesso!",
+                    showConfirmButton: false,
+                    timer: 1500
+                  }).then(() => {
+                    location.reload();
+                });
+                
             },
             error: function(xhr, status, error){
                 console.error(xhr.responseText);
