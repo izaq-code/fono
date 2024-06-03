@@ -12,6 +12,12 @@
   margin-right: 50px;
 }
 
+#procura{
+display:flex;
+align-items:center;
+justify-content: center;
+}
+
 #searchInput {
   padding-left: 40px !important ;
   padding: 10px;
