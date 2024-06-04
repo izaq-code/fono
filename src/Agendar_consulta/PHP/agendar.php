@@ -55,4 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo false;
     }
 }
+
+$pdo = null;
 ?>
