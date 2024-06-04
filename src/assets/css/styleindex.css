@@ -1,4 +1,4 @@
-@media only screen and (min-width: 1080px) {
+
 li {
     list-style: none;
 }
@@ -175,7 +175,8 @@ hr{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 20px;
-    max-width: 1000px;
+    min-width: 300px; /* Define a largura mínima da grid */
+    max-width: 1000px; /* Define a largura máxima da grid */
 
   }
   
@@ -204,7 +205,9 @@ margin-left: 800px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 20px;
     max-width: 1000px;
-  margin-left: 300px;
+    margin-left: 480px;
+   
+
 
 }
 
@@ -215,177 +218,46 @@ margin-left: 800px;
     align-items: center; /* Centraliza verticalmente */
     width: 75%; /* Define a largura do elemento */
     border-bottom: 1px solid #CCCCCC; /* Define a cor e o estilo da linha */
-    margin: 20px auto; /* Espaçamento superior e inferior e centraliza horizontalmente */
+    margin: 20px auto; /* Espaçamento superior e inferior e centraliza horizontalmente*/
+    margin-left: 250px;
+    
 }
 
-}
 
-
-/* responsividade*/
-
-@media only screen and (min-width: 500px) {
-
-
-    .img {
-
-        margin-bottom: 100px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;  
-        background-attachment: fixed;
-      
-    
-    }
-
-    
-    #coment,#p{
-
-        margin-left: 100px;
-        margin-bottom: 70px;
-       
-    }
-
-   
-
-    .container{
-    height: 180px;
-    padding-left: 20px;
-    flex-direction: row;
-    justify-content: space-evenly;
-    border-radius: 20px;
-    box-shadow:3px 3px 15px rgb(0, 0, 0, 0.1);
-    margin-left: -80%;
-
-    }
-    
-    .card-text{
-    margin-left: 55px;
-    margin-top: 50px;
-    padding-bottom: 10px;
-    position: absolute;
-    
-    
-    }
-    
-    .card{
-    
-        border-radius: 20px;
-        color:#d9d9d9;
-        background-color: #FFFFFF;
-        border: none;
-    
-    }
-    
-    #fed{
-    padding-top: 10px;
-    font-weight: 500;
-    color: #008080; 
-    
-    }
-    
-    #nome{
-    position: absolute;
-        color: #008080;
-        margin-left: 55px;
-        margin-top: 30px;
-    }
-    
-    #perfil{
-    margin-top: 30px;
-    position: absolute;
-    
-    }
-    
-    
-    #email {
-        display: block; /* Coloca o e-mail em uma linha separada */
-        margin-top: 5px; /* Adiciona um espaço acima do e-mail */
-        padding-left: 10px; /* Adiciona espaçamento à esquerda */
-    }
-    
-    hr{
-        
-        box-sizing:border-box;
-        border-bottom: 3px solid #aaa;
-        width:100%;  
-      }
-    
-    .icons{
-    
-        color:#008080 ;
-    }
-    
-    #fono2 {
-    
-        color: black;
-        text-decoration: none;
-       
-    
-    }
-    
-    #FONO{
-
-        margin-left: 70px;
-        margin-bottom: 50px;
-
-
-    }
-    
+@media screen and (max-width: 600px) {
     #divpai {
-
-        margin-left: -150%;  
-        grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
-        grid-gap: -10px;
-        max-width: 400px;
-        margin-bottom: 40px;
-    
-      }
-      
-      .topic1 {
-    
-     margin-left: 800px;
-    
-    /* espaçamento entre as colunas*/
-    
-      }
-      
-      .pages {
-        font-weight: bold;
-      }
-      
-      .item {
-        margin-top: 15px;
-        /* espaço em baixo das linhas para a escrita ter um leve espaçamento*/
-      }
-    
-      
-    
-    #mae{
-    
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajuste de colunas para dispositivos pequenos */
+        grid-gap: 40px;
         max-width: 1000px;
-        margin-left: 300px;
-
-    
+        margin: 0 auto; /* Centraliza horizontalmente */
     }
+    
+   
+        #mae {
+
+        display: flex;
+        flex-direction: column; /* Define a direção dos itens como coluna */
+        align-items: center; /* Alinha os itens ao centro */
+        max-width: none; /* Remover a largura máxima */
+        margin: 0 auto; /* Centraliza horizontalmente */
+        grid-area: fed;
+        
+        }
+    
     
     
     .linha {
-
         display: flex;
         justify-content: center; /* Centraliza horizontalmente */
         align-items: center; /* Centraliza verticalmente */
-        width: 75%; /* Define a largura do elemento */
+        width: 100%; /* Largura total */
         border-bottom: 1px solid #CCCCCC; /* Define a cor e o estilo da linha */
-        margin: 20px auto; /* Espaçamento superior e inferior e centraliza horizontalmente */
-
+        margin: 40px 0; /* Espaçamento superior e inferior */
     }
-    
-    
-
 }
+
+
 
 
 
