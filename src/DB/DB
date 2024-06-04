@@ -83,6 +83,7 @@ CREATE TABLE consulta (
     id INT AUTO_INCREMENT PRIMARY KEY,
     detalhes VARCHAR(300),
     num2 VARCHAR(18),
+    data_marq date NOT NULL DEFAULT curdate(),
     realizada boolean DEFAULT false,
     id_paciente INT,
     id_fono INT,
@@ -91,6 +92,31 @@ CREATE TABLE consulta (
     FOREIGN KEY (id_fono) REFERENCES fonoaudiologo(id) on delete cascade on update cascade,
     FOREIGN KEY (id_data_con) REFERENCES conexao_h_d(id) on delete cascade on update cascade
 ) engine = Innodb; 
+
+CREATE TABLE retorno (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    detalhes VARCHAR(300),
+    data date NOT NULL DEFAULT curdate(),
+    id_paciente INT,
+    id_produto INT,
+    id_consulta INT,
+    id_fono INT,
+    id_data_con INT,
+    FOREIGN KEY (id_produto) REFERENCES cadastro_produto(cod_produto) on delete cascade on update cascade,
+    FOREIGN KEY (id_consulta) REFERENCES consulta(id) on delete cascade on update cascade,
+    FOREIGN KEY (id_fono) REFERENCES fonoaudiologo(id) on delete cascade on update cascade,
+    FOREIGN KEY (id_paciente) REFERENCES dados_paciente(cod_paciente) on delete cascade on update cascade,
+    FOREIGN KEY (id_data_con) REFERENCES conexao_h_d(id) on delete cascade on update cascade
+) engine = Innodb;
+
+CREATE TABLE vendas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    data date NOT NULL DEFAULT curdate(),
+    detalhes VARCHAR(300),
+    venda_efetuada BOOLEAN,
+    id_retorno INT,
+    FOREIGN KEY (id_retorno) REFERENCES retorno(id) on delete cascade on update cascade
+)engine = Innodb;
 
 -- triggers
 

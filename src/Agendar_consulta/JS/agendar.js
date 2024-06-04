@@ -10,6 +10,7 @@ $(document).ready(function () {
             data: formData,
             success: function(response) {
                 console.log('Resposta do servidor:', response); // Verifica a resposta do servidor
+                window.location.reload;
             },
             error: function(xhr, status, error) {
                 var errorMessage = xhr.status + ': ' + xhr.statusText;

@@ -1,20 +1,14 @@
 document.addEventListener("DOMContentLoaded", tabela);
 // window.addEventListener("load", tabela);
-
-    var id = 1;
-
 function tabela(){
     $(document).ready(function(){
         $.ajax({
             type: 'POST',
             url: './PHP/tabela.php',
-            data: {
-                id: id
-            },
             contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
             dataType: 'json',
             success: function(data){
-                data == false ? alert('nenhuma consulta cadastrada') : exibir(data);
+                data == false ? alert('nenhum usuario encontrado') : exibir(data);
             }
 
         });
@@ -23,10 +17,10 @@ function tabela(){
 
 function exibir(data){
     
-    t = $('#consulta');
+    t = $('#nome');
     
     data.forEach(function(e){
-        var table = "<option value='" + e['id'] + "'>" + e['detalhes'] + "</option>";
+        var table = "<option value='" + e['cod'] + "'>" + e['nome'] + "</option>";
         t.append(table); 
     })
 }

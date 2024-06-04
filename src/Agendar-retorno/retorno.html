@@ -5,18 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retorno</title>
+    <style>
+        * {
+          padding: 5px;
+        }
+  
+        .quad {
+          background-color: gainsboro;
+          margin-top: 5px;
+          height: auto;
+          border: 1px solid gray;
+          border-radius: 5px;
+          width: auto;
+          max-width: 80%;
+        }
+      </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
     <h1>Agendar Retorno</h1>
     <form id="agendar">
+        <div class="quad" id="nomec"></div>
+        <div class="quad" id="cpf"></div>
+        <div class="quad" id="tel"></div>
         <select id="consulta">
             <option value="" disabled selected>Selecione uma consulta</option>
         </select>
+        <input type="text" name="detalhes" placeholder="Detalhes da consulta" />
+        <select id="fono" name="fono">
+            <option value="" disabled selected>Escolha um fonoaudiólogo</option>
+        </select>
+        <select id="hora" name="hora">
+            <option value="" disabled selected>Escolha um horário</option>
+        </select>
+        <input type="date" name="data" id="data" max="9999-12-31">
+        <button type="submit"> Agendar Retorno </button>
     </form>
 
     <script src="JS/tabela.js"></script>
+    <script src="JS/datas-anteriores-false.js"></script>
+    <script src="JS/preencher-informacoes.js"></script>
+    <script src="JS/tabela-fono.js"></script>
+    <script src="JS/preencher-fono.js"></script>
+    <script src="JS/preencher-datas.js"></script>
+    <script src="JS/agendar.js"></script>
+
+
+
 </body>
 
 </html>
