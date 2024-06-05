@@ -25,11 +25,11 @@ function ex(dada){
     
     u = $('#retorno');
     u.empty();
-    u.append('<option value="" disabled selected>Escolha um horário</option>');
+    u.append('<option value="" disabled selected>Escolha um retorno</option>');
     
     for (let key in dada) {
         if (dada.hasOwnProperty(key)) {
-            var tab = "<option value='" + dada[key]['cod'] + "' data-id='"+ dada[key]['id'] +"'>" + dada[key]['hora'] + "</option>";
+            var tab = "<option value='" + dada[key]['id'] + "' data-id='"+ dada[key]['id'] +"'>" + dada[key]['detalhes'] + "</option>";
             u.append(tab);
         }
     }    
