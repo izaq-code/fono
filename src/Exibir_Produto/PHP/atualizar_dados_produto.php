@@ -23,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Atualizar os dados do produto
     $atualizar = "UPDATE cadastro_produto SET 
                     nome = '$nome',
                     preco = '$preco',
