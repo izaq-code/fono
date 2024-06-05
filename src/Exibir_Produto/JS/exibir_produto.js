@@ -22,24 +22,30 @@ function listarProdutos() {
         dataType: 'json',
         success: function (produtos) {
             container.empty();
-
+            
             produtos.forEach(function (produto) {
                 var item = $('<div>').addClass('produto');
-            
-                var nome = $('<h3>').addClass('produto-nome').text(produto.nome); 
+
+                var nome = $('<h3>').addClass('produto-nome').text(produto.nome);
                 item.append(nome);
-            
+
                 var imgContainer = $('<div>').addClass('img-container');
                 var imagem = $('<img>').attr('src', produto.imagem);
                 imgContainer.append(imagem);
                 item.append(imgContainer);
-            
+
                 var preco = $('<p>').text('Preço: ' + produto.preco);
                 item.append(preco);
-            
+
                 var quantidade = $('<p>').addClass('quantidade').text(produto.quantidade + ' em estoque');
                 item.append(quantidade);
-            
+
+                var categoria = $('<p>').addClass('categoria').text('Categoria: ' + produto.categoria).css('display', 'none');
+                item.append(categoria);
+
+                var descricao = $('<p>').addClass('descricao').text('Descrição: ' + produto.descricao).css('display', 'none');;
+                item.append(descricao);
+
                 // Div para botões de quantidade
                 var divBotao = $('<div>').addClass('input-group');
                 var botaoMenos = $('<button>').addClass('menos-btn').attr('type', 'button').text('-');
@@ -47,14 +53,14 @@ function listarProdutos() {
                 var botaoMais = $('<button>').addClass('mais-btn').attr('type', 'button').text('+');
                 divBotao.append(botaoMenos, botaoQuantidade, botaoMais);
                 item.append(divBotao);
-            
+
                 // Div para botões de confirmação
                 var divConfirmacao = $('<div>').addClass('confirmacao-container');
                 var botaoConfirmar = $('<button>').addClass('confirmar-btn').attr('type', 'button').html('<i class="bi bi-check-lg"></i>').data('id', produto.cod);
                 var botaoCancelar = $('<button>').addClass('cancelar-btn').attr('type', 'button').html('<i class="bi bi-x"></i>');
                 divConfirmacao.append(botaoConfirmar, botaoCancelar);
                 item.append(divConfirmacao);
-            
+
                 //Div para atualizar
                 var divAtualizar = $('<div>').addClass('atualizar-container');
                 var botaoAtualizar = $('<button>').addClass('atualizar').attr('type', 'button').text('Atualizar').data('id', produto.cod);
@@ -76,15 +82,17 @@ function listarProdutos() {
 $(document).ready(function () {
     listarProdutos();
 
-    $(document).on('click', '.cancelar-btn', function() {
+    //função para cancelar
+    $(document).on('click', '.cancelar-btn', function () {
         var botaoQuantidade = $(this).closest('.produto').find('.quantidade-input');
         botaoQuantidade.val(0);
     });
-    
-    $(document).on('click', '.confirmar-btn', function() {
+
+    //função para confirmar
+    $(document).on('click', '.confirmar-btn', function () {
         var id = $(this).data('id');
         var botaoQuantidade = $(this).closest('.produto').find('.quantidade-input');
-        var valorQuantidade = parseInt(botaoQuantidade.val()); 
+        var valorQuantidade = parseInt(botaoQuantidade.val());
 
         if (!isNaN(valorQuantidade)) {
             $.ajax({
@@ -108,10 +116,10 @@ $(document).ready(function () {
     });
 });
 
- 
-$('#searchInput').on('keyup', function() {
+
+$('#searchInput').on('keyup', function () {
     var searchTerm = $(this).val().toLowerCase();
-    $('.produto').each(function() {
+    $('.produto').each(function () {
         var nomeProduto = $(this).find('.produto-nome').text().toLowerCase();
         if (nomeProduto.includes(searchTerm)) {
             $(this).show();
@@ -123,15 +131,15 @@ $('#searchInput').on('keyup', function() {
 
 
 //Deletar algum produto 
-$(document).on('click', '.deletar', function() {
+$(document).on('click', '.deletar', function () {
     var id = $(this).data('id');
 
     if (confirm("Tem certeza que deseja deletar este produto?")) {
         $.ajax({
             url: '../PHP/deletar.php',
             type: 'POST',
-            data: { 
-                cod: id 
+            data: {
+                cod: id
             },
             success: function (response) {
                 console.log(response);
@@ -142,43 +150,4 @@ $(document).on('click', '.deletar', function() {
             }
         });
     }
-});
-
-
-// Função para atualizar um produto
-$(document).on('click', '.atualizar', function() {
-    var id = $(this).data('id');
-    console.log('ID do produto:', id);
-
-    var produto = $(this).closest('.produto');
-    var nome = produto.find('.produto-nome').text();
-    console.log('Nome do produto:', nome);
-    var preco = produto.find('p:contains("Preço:")').text().replace('Preço: ', '');
-    console.log('Preço do produto:', preco);
-    var quantidade = produto.find('.quantidade').text().replace(' em estoque', '');
-    console.log('Quantidade do produto:', quantidade);
-    var imagem = produto.find('img').attr('src');
-    console.log('Imagem do produto:', imagem);
-
-    window.location.href = '../../Cadastro_Produto/atualizar.html?id=' + id;
-
-    $.ajax({
-        url: '../PHP/atualizar_dados_produto.php',
-        type: 'POST',
-        data: {
-            cod: id,
-            nome: nome,
-            preco: preco,
-            quantidade: quantidade,
-            imagem: imagem
-        },
-        success: function(response) {
-            console.log('Produto atualizado com sucesso:', response);
-            listarProdutos(); 
-        },
-        error: function(xhr, status, error) {
-            console.error('Erro ao atualizar produto:', error);
-            alert('Erro ao atualizar produto!');
-        }
-    });
 });
