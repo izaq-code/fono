@@ -2,8 +2,8 @@
 
 
 
-<img src="project-image.jpg" alt="Imagem">
-<img src="google-img.jpg" width="650px" alt="Imagem">
+<img src="./docs/img/project-image.jpg" alt="Imagem">
+<img src="./docs/img/google-img.jpg" width="650px" alt="Imagem">
 
 ---
 Acesse [aqui](docs/README.MD) nossa documentação!
@@ -31,16 +31,6 @@ Aqui estão as tecnologias e linguagens utilizadas no desenvolvimento deste proj
 </div><br>
 
 Estas tecnologias foram essenciais para criar uma aplicação web robusta e eficiente.
-
-
-<style>
-  table {
-    border-collapse: collapse;
-  }
-  td, th {
-    border: none;
-  }
-</style>
 
 ## 🤝 Integrantes
 
@@ -99,22 +89,6 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
   </tr>
 </table>
 
-
-## Professor
-
-* Wiverson Feliciano Gomes.
-
-
-## Instruções de utilização
-
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
-
-## Histórico de versões
-
-* 0.1.1
-    * CHANGE: Atualização das documentações. Código permaneceu inalterado.
-
-    ---
 
 
 ### Ajustes e melhorias
