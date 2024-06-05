@@ -129,7 +129,6 @@ $('#searchInput').on('keyup', function () {
     });
 });
 
-
 //Deletar algum produto 
 $(document).on('click', '.deletar', function () {
     var id = $(this).data('id');
@@ -151,3 +150,5 @@ $(document).on('click', '.deletar', function () {
         });
     }
 });
+
+
