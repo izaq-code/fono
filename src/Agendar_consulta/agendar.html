@@ -1,58 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agendar Consulta</title>
-    <style>
-      * {
-        padding: 5px;
-      }
 
-      .quad {
-        background-color: gainsboro;
-        margin-top: 5px;
-        height: auto;
-        border: 1px solid gray;
-        border-radius: 5px;
-        width: auto;
-        max-width: 80%;
-      }
-    </style>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agendar Consulta</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/padrao.css">
+  <link rel="stylesheet" href="./CSS/agendar_consulta.css">
+</head>
 
-  <body>
-    <h1>Agendar Consulta</h1>
-    <form id="agendar">
-      <select id="nome" name="nome" >
-        <option value="" disabled selected>Escolha um paciente</option>
-      </select>
-      <div class="quad" id="nomec"></div>
-      <div class="quad" id="cpf"></div>
-      <div class="quad" id="tel"></div>
-      <input type="text" name="num2" placeholder="Novo número (opcional)" />
-      <input type="text" name="detalhes" placeholder="Detalhes da consulta" />
-      <select id="fono" name="fono" >
-        <option value="" disabled selected>Escolha um fonoaudiólogo</option>
-      </select>
-      
-      <select id="hora" name="hora" >
-        <option value="" disabled selected>Escolha um horário</option>
-      </select>
-      
-      <input type="date" name="data" id="data"  max="9999-12-31">
+<body>
+  <div class="content">
+    <div class="container-agendar-consulta">
+      <form id="agendar">
+        <div class="agendar-consulta-titulo"> Agendar Consulta</div>
+        <div class="form-agendar-consulta">
+          <div class="input">
+            <select id="nome" name="nome">
+              <option value="" disabled selected>Escolha um paciente</option>
+              <label for="nome">Novo número (opcional)</label>
+            </select>
+          </div>
+          
+          <div class="input">
+            <input type="text" name="num2">
+            <label for="nome">Novo número (opcional)</label>
+          </div>
 
-      <button type="submit">agendar</button>
-    </form>
-  </body>
-  <script src="JS/tabela.js"></script>
-  <script src="JS/tabela-fono.js"></script>
-  <script src="JS/preencher-informacoes.js"></script>
-  <script src="JS/preencher-fono.js"></script>
-  <script src="JS/preencher-datas.js"></script>
-  <script src="JS/datas-anteriores-false.js"></script>
-  <script src="JS/agendar.js"></script>
+          <div class="input">
+            <input type="text" name="detalhes" required>
+            <label for="nome">Detalhes</label>
+          </div>
+
+          <div class="input">
+            <select id="fono" name="fono">
+              <option value="" disabled selected>Escolha um fonoaudiólogo</option>
+            </select>
+          </div>
+
+          <div class="input">
+            <input type="date" name="data" id="data" max="9999-12-31" required>
+            <label for="nome">Data</label>
+          </div>
+
+          <div class="input">
+            <input type="time" id="hora" name="hora" max="9999-12-31" required>
+            <label for="nome">Horário</label>
+          </div>
+
+          <button id="botao-agendar-consulta" type="submit">agendar</button>
+      </form>
+    </div>
+  </div>
+  </div>
+
+</body>
+<script src="JS/tabela.js"></script>
+<script src="JS/tabela-fono.js"></script>
+<script src="JS/preencher-informacoes.js"></script>
+<script src="JS/preencher-fono.js"></script>
+<script src="JS/preencher-datas.js"></script>
+<script src="JS/datas-anteriores-false.js"></script>
+<script src="JS/agendar.js"></script>
 
 
 
