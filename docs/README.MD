@@ -1,155 +1,94 @@
-# Fono
+# 📂Documentação Fono
 
 
-<img src="imagem.png" alt="Imagem">
+## Instalação do Sistema FONO em sua Máquina Local
 
-> Esta é a documentação do nosso projeto! Siga as intruções para usar o site com eficiência.
+### Passo 1: Clone o Repositório
 
+1. Abra o terminal ou prompt de comando.
+2. Navegue até o diretório onde deseja clonar o repositório.
+3. Execute o seguinte comando para clonar o repositório:
 
----
+```bash
+git clone https://github.com/izaq-code/fono.git
+```
 
-## ⚒️ Stacks utilizadas
+### Passo 2: Configurar o Servidor Web
 
-Aqui estão as tecnologias e linguagens utilizadas no desenvolvimento deste projeto:
+1. Instale e configure um servidor web local, como XAMPP, WAMP ou MAMP, conforme sua preferência.
+2. Se estiver utilizando o XAMPP, coloque a pasta clonada dentro da pasta `htdocs`. Para WAMP, coloque-a dentro da pasta `www`.
+3. Inicie o servidor web.
 
-<div style="display: inline_block"><br>
-<img align="center" alt="HTML5" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-  <img align="center" alt="CSS3" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
-  <img align="center" alt="JavaScript" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-  <img align="center" alt="jQuery" height="30" width="40" src="https://icongr.am/devicon/jquery-plain-wordmark.svg?size=128&color=e6e6e6">
-  <img align="center" alt="Bootstrap" height="30" width="40" src="https://icongr.am/devicon/bootstrap-plain-wordmark.svg?size=138&color=6842ae">
-  <img align="center" alt="MySQL" height="30" width="40" src="https://icongr.am/devicon/mysql-original-wordmark.svg?size=138&color=ffffff">
-  <img align="center" alt="PHP" height="30" width="40" src="https://icongr.am/devicon/php-original.svg?size=138&color=ffffff">
-</div><br>
+### Passo 3: Configurar o Banco de Dados
 
-Estas tecnologias foram essenciais para criar uma aplicação web robusta e eficiente.
+1. Acesse o phpMyAdmin pelo navegador.
+2. Crie um novo banco de dados chamado `fono`.
+3. Importe o arquivo SQL fornecido para criar a estrutura do banco de dados e inserir dados iniciais, se necessário.
 
+### Passo 4: Acessar o Sistema
 
-<style>
-  table {
-    border-collapse: collapse;
-  }
-  td, th {
-    border: none;
-  }
-</style>
+1. Abra o navegador web de sua preferência.
+2. Acesse o sistema digitando o seguinte endereço na barra de endereços:
 
-## 🤝 Integrantes
+```
+localhost/fono/index.html
+```
 
-Agradecemos às seguintes pessoas que contribuíram para este projeto:
-
-<table>
-  <tr>
-    <td align="center">
-      <a href="#" title="defina o titulo do link">
-        <img src="https://avatars3.githubusercontent.com/u/31936044" width="100px;" alt="Foto do André"/><br>
-        <sub>
-          <b>André Cardoso</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#" title="defina o titulo do link">
-        <img src="https://avatars.githubusercontent.com/u/165795825?v=4" width="100px;" alt="Foto da Eduarda F."/><br>
-        <sub>
-          <b>Eduarda Vilaça</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#" title="defina o titulo do link">
-        <img src="https://avatars.githubusercontent.com/u/159597766?v=4" width="100px;" alt="Foto da Eduarda V."/><br>
-        <sub>
-          <b>Eduarda Vieira</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#" title="defina o titulo do link">
-        <img src="https://avatars.githubusercontent.com/u/136115980?v=4" width="100px;" alt="Foto do Ian"/><br>
-        <sub>
-          <b>Ian Novais</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#" title="defina o titulo do link">
-        <img src="https://avatars.githubusercontent.com/u/122700689?v=4" width="100px;" alt="Foto do Isaque"/><br>
-        <sub>
-          <b>Isaque Gomes</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#" title="defina o titulo do link">
-        <img src="https://avatars3.githubusercontent.com/u/31936044" width="100px;" alt="Foto do Tito"/><br>
-        <sub>
-          <b>Tiago Gonçalves</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
+Isso deve levar você à página inicial do sistema FONO. Agora você pode começar a usar o sistema em sua própria máquina local!
+```
+Este guia fornece instruções claras sobre como baixar, configurar e acessar o sistema FONO em uma máquina local usando um servidor web e banco de dados MySQL.
+```
 
 
-
----
-
-Dessa forma, a seção sobre as tecnologias utilizadas mantém as imagens e lista as linguagens e tecnologias principais empregadas no desenvolvimento do projeto.
-
-### Ajustes e melhorias
-
-O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
-
-- [x] Tarefa 1
-- [x] Tarefa 2
-- [x] Tarefa 3
-- [ ] Tarefa 4
-- [ ] Tarefa 5
+ # *API de Cadastro do Google*  <img align="center" alt="PHP" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg" />
 
 
-## 🔄 Funcionamento da Clínica Fonodiológica
+A API de cadastro do Google, também conhecida como Google Sign-In API, é uma API oferecida pelo Google que permite que os desenvolvedores integrem facilmente a funcionalidade de autenticação com contas do Google em suas aplicações.
 
-A clínica fonodiológica opera com um sistema de gestão que abrange desde o atendimento ao cliente até o controle de estoque de produtos. Abaixo estão os principais processos suportados pelo sistema:
+## *Funcionalidades Principais:* 
+- Autenticação Simples e Conveniente: A API de cadastro do Google simplifica o processo de autenticação para os usuários, permitindo que eles façam login nos sistemas utilizando suas contas do Google, sem a necessidade de criar e lembrar de novos nomes de usuário e senhas.
 
-### Atendimento ao Cliente
+- Segurança Reforçada: Ao utilizar a autenticação com contas do Google, os sistemas podem se beneficiar dos mecanismos de segurança robustos fornecidos pelo Google, incluindo verificação em duas etapas, detecção de atividade suspeita e outras camadas de segurança avançadas.
 
-* Um cliente chega à clínica para um atendimento.
-* O atendente registra os detalhes do cliente/paciente no sistema, incluindo informações pessoais e médicas relevantes.
+- Integração com Outros Serviços do Google: A API de cadastro do Google pode ser facilmente integrada com outros serviços do Google, como Google Analytics, Google Drive e Google Cloud Platform, permitindo uma experiência de usuário contínua e integrada em todo o ecossistema do Google.
 
-### Pedido de Aparelho Auditivo
+# CRUD
 
-* Após a consulta, se for determinado que o cliente precisa de um aparelho auditivo, o atendente registra o pedido no sistema.
-* O cliente recebe o aparelho auditivo e tem um período de teste de 3 dias.
+CRUD é um acrônimo que representa as quatro operações básicas para manipulação de dados em sistemas de banco de dados ou aplicações:
 
-### Período de Teste do Aparelho Auditivo
+- Create (Criar): Permite a criação de novos registros ou entradas de dados no sistema.
 
-* Durante os 3 dias de teste, o cliente usa o aparelho auditivo em casa.
-* Após o período de teste, o cliente informa à clínica se deseja comprar ou devolver o aparelho.
+- Read (Ler): Permite a recuperação ou leitura de dados existentes no sistema.
 
-### Compras e Devoluções
+- Update (Atualizar): Permite a atualização ou modificação de dados existentes no sistema.
 
-* Se o cliente decidir comprar o aparelho, o atendente registra a compra no sistema.
-* Se o cliente optar por devolver o aparelho, o atendente registra a devolução no
-sistema.
-
-### Gerenciamento de Estoque
-
-* O sistema permite o cadastro de produtos no estoque, incluindo aparelhos auditivos e outros produtos relacionados.
-* O estoque é atualizado automaticamente conforme as compras e devoluções são registradas no sistema.
-
-### Cadastro de Cliente/Paciente
-
-* O sistema permite o cadastro detalhado de clientes/pacientes, incluindo informações pessoais, médicas e histórico de atendimentos.
-* Os dados dos clientes são armazenados de forma segura e acessível apenas aos funcionários autorizados da clínica.
-
-Com esses processos integrados ao sistema, a clínica fonodiológica pode gerenciar de forma eficiente o atendimento aos clientes, o controle de estoque e as transações de compra e devolução de aparelhos auditivos.
-
----
-
-Essa explicação adiciona detalhes sobre como o sistema suporta as operações da clínica fonodiológica, desde o atendimento ao cliente até o gerenciamento de estoque e transações comerciais.
+- Delete (Excluir): Permite a exclusão de registros ou entradas de dados do sistema.
+Essas operações formam a base para a gestão de dados em muitas aplicações, permitindo que os usuários criem, leiam, atualizem e excluam informações conforme necessário.
 
 
-## 📝 Licença
+## Funcionalidades Principais
 
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
+1. **Autenticação com Google API**
+   - Permite que os usuários cadastrem e façam login no sistema utilizando suas contas do Google, proporcionando um processo de autenticação seguro e conveniente.
+
+2. **Gerenciamento de Pacientes (CRUD)**
+   - Oferece um conjunto completo de operações CRUD (Criar, Ler, Atualizar, Excluir) para os dados dos pacientes. Os profissionais podem cadastrar novos pacientes, visualizar seus dados, atualizar informações quando necessário e excluir registros obsoletos.
+
+3. **Gerenciamento de Produtos (CRUD)**
+   - Fornece funcionalidades semelhantes de CRUD para o cadastro e gestão de produtos. Isso permite que os profissionais mantenham um registro organizado dos produtos disponíveis em sua clínica ou consultório.
+
+4. **Consulta de Experiência de Produtos**
+   - Permite agendar consultas para experimentação de produtos específicos durante um período de 3 dias. Isso oferece aos pacientes a oportunidade de testar os produtos antes de decidir pela compra, aumentando a satisfação e a confiança do cliente.
+
+5. **Relatório de Vendas**
+   - Gera relatórios detalhados sobre as vendas realizadas no sistema.
+
+## Tecnologias Utilizadas
+
+O sistema FONO é desenvolvido utilizando as seguintes tecnologias:
+
+- **JavaScript (AJAX e JSON)**: Utilizado para criar funcionalidades dinâmicas no front-end, permitindo uma experiência de usuário interativa e responsiva.
+- **PHP Data Objects (PDO) e MySQLi**: Utilizados para estabelecer conexão e interação com o banco de dados MySQL. Essas tecnologias garantem a segurança e a eficiência no armazenamento e recuperação de dados do sistema.
+
+Com uma ampla gama de funcionalidades e tecnologias modernas, o sistema FONO proporciona uma solução abrangente e eficiente para profissionais de fonodiologia em suas práticas clínicas.
+
