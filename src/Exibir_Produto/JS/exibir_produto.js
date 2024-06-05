@@ -55,9 +55,20 @@ function listarProdutos() {
                 divConfirmacao.append(botaoConfirmar, botaoCancelar);
                 item.append(divConfirmacao);
             
+                //Div para atualizar
+                var divAtualizar = $('<div>').addClass('atualizar-container');
+                var botaoAtualizar = $('<button>').addClass('atualizar').attr('type', 'button').text('Atualizar').data('id', produto.cod);
+                divAtualizar.append(botaoAtualizar);
+                item.append(divAtualizar);
+
+                //Div para deletar
+                var divDeletar = $('<div>').addClass('deletar-container');
+                var botaoDeletar = $('<button>').addClass('deletar').attr('type', 'button').text('Deletar').data('id', produto.cod);
+                divDeletar.append(botaoDeletar);
+                item.append(divDeletar);
+
                 container.append(item);
             });
-            
         }
     });
 }
@@ -77,7 +88,7 @@ $(document).ready(function () {
 
         if (!isNaN(valorQuantidade)) {
             $.ajax({
-                url: '../PHP/atualizar.php',
+                url: '../PHP/atualizar_estoque.php',
                 type: 'POST',
                 data: {
                     produto_id: id,
@@ -106,6 +117,68 @@ $('#searchInput').on('keyup', function() {
             $(this).show();
         } else {
             $(this).hide();
+        }
+    });
+});
+
+
+//Deletar algum produto 
+$(document).on('click', '.deletar', function() {
+    var id = $(this).data('id');
+
+    if (confirm("Tem certeza que deseja deletar este produto?")) {
+        $.ajax({
+            url: '../PHP/deletar.php',
+            type: 'POST',
+            data: { 
+                cod: id 
+            },
+            success: function (response) {
+                console.log(response);
+                listarProdutos();
+            },
+            error: function (xhr, status, error) {
+                console.error("Erro ao deletar produto: " + error);
+            }
+        });
+    }
+});
+
+
+// Função para atualizar um produto
+$(document).on('click', '.atualizar', function() {
+    var id = $(this).data('id');
+    console.log('ID do produto:', id);
+
+    var produto = $(this).closest('.produto');
+    var nome = produto.find('.produto-nome').text();
+    console.log('Nome do produto:', nome);
+    var preco = produto.find('p:contains("Preço:")').text().replace('Preço: ', '');
+    console.log('Preço do produto:', preco);
+    var quantidade = produto.find('.quantidade').text().replace(' em estoque', '');
+    console.log('Quantidade do produto:', quantidade);
+    var imagem = produto.find('img').attr('src');
+    console.log('Imagem do produto:', imagem);
+
+    window.location.href = '../../Cadastro_Produto/atualizar.html?id=' + id;
+
+    $.ajax({
+        url: '../PHP/atualizar_dados_produto.php',
+        type: 'POST',
+        data: {
+            cod: id,
+            nome: nome,
+            preco: preco,
+            quantidade: quantidade,
+            imagem: imagem
+        },
+        success: function(response) {
+            console.log('Produto atualizado com sucesso:', response);
+            listarProdutos(); 
+        },
+        error: function(xhr, status, error) {
+            console.error('Erro ao atualizar produto:', error);
+            alert('Erro ao atualizar produto!');
         }
     });
 });
