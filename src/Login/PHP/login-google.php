@@ -40,7 +40,18 @@ if (isset($_GET['code'])) {
         // Iniciar sessão do usuário
         header('Location: http://localhost/fono/src/Paciente/listar_pacientes.html'); // Redirecionar para a página inicial ou qualquer outra página desejada
     } else {
-        header('Location: http://localhost/fono/src/Cadastro/PHP/error.php'); // Redirecionar para uma página de erro ou exibir uma mensagem de erro
+
+        $insert = $pdo->prepare("INSERT INTO usuario (google_id, email, name, profile_picture) VALUES (:google_id, :email, :name, :profile_picture)");
+        $insert->execute([
+            'google_id' => $userinfo['id'],
+            'email' => $userinfo['email'],
+            'name' => $userinfo['name'],
+            'profile_picture' => $userinfo['picture']
+        ]);
+
+        $_SESSION['user'] = $userinfo;
+
+        header('Location: http://localhost/fono/src/Paciente/listar_pacientes.html');// Redirecionar para uma página de erro ou exibir uma mensagem de erro
     }
     exit;
 }
