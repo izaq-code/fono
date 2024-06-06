@@ -14,6 +14,15 @@ $(document).ready(function () {
         event.preventDefault();
 
         var formData = new FormData(this);
+        var inputName = 'foto_produto';
+
+        var inputFile = document.getElementById('foto_produto');
+
+        if (!inputFile || inputFile.files.length === 0) {
+            console.error("O campo de imagem não foi encontrado ou está vazio.");
+        } else {
+            formData.append(inputName, inputFile.files[0]);
+        }
 
         $.ajax({
             url: '../Exibir_Produto/PHP/atualizar_dados_produto.php', 
