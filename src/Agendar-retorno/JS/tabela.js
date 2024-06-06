@@ -1,16 +1,13 @@
 document.addEventListener("DOMContentLoaded", tabela);
 // window.addEventListener("load", tabela);
 
-    var id = 1;
+
 
 function tabela(){
     $(document).ready(function(){
         $.ajax({
             type: 'POST',
             url: './PHP/tabela.php',
-            data: {
-                id: id
-            },
             contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
             dataType: 'json',
             success: function(data){
