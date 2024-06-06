@@ -44,13 +44,16 @@ $(document).ready(function() {
                 
                 if (response.length > 0) {
                     $.each(response, function(index, produto) {
-                        var produtoHtml = '<div>';
+                        var produtoHtml = '<div class="produto">';
                         produtoHtml += '<h3>' + produto.nome_produto + '</h3>';
+                        produtoHtml += '<div class="img-container">';
                         produtoHtml += '<img src="' + produto.imagem_do_produto + '" alt="' + produto.nome_produto + '">';
+                        produtoHtml += '</div>';
                         produtoHtml += '<p>Preço: R$ ' + produto.preco_produto + '</p>';
                         produtoHtml += '</div>';
                         $('#Relatorio').append(produtoHtml);
                     });
+                    
                 } else {
                     $('#Relatorio').html('<p>Nenhum produto vendido por este vendedor nesta data.</p>');
                 }
