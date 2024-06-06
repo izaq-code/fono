@@ -53,6 +53,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ]);
 
     if($sql5 -> rowCount() > 0) {
+
+        $diminui_estoque = $pdo->prepare("UPDATE cadastro_produto SET
+                                        quantidade_produto = quantidade_produto - 1
+                                        WHERE cod_produto = :id");
+
+        $diminui_estoque->execute([
+        'id' => $prod
+        ]);
         echo true;
     } else {
         echo false;

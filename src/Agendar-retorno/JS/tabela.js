@@ -1,13 +1,14 @@
-document.addEventListener("DOMContentLoaded", tabela);
-// window.addEventListener("load", tabela);
+$('#nome').on('change', function () {
 
+    var selecionado = this.value;
 
-
-function tabela(){
     $(document).ready(function(){
         $.ajax({
             type: 'POST',
             url: './PHP/tabela.php',
+            data: {
+                selecionado: selecionado
+            },
             contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
             dataType: 'json',
             success: function(data){
@@ -16,7 +17,7 @@ function tabela(){
 
         });
     });
-}
+});
 
 function exibir(data){
     
