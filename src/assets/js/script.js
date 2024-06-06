@@ -9,9 +9,19 @@ document.addEventListener('DOMContentLoaded', function() {
         if (submenu.classList.contains('visible')) {
             icon.className = '';
             icon.classList.add('bi', newIconClass);
+            localStorage.setItem(submenuId + '-state', 'visible');
         } else {
             icon.className = '';
             icon.classList.add('bi', 'bi-caret-up-fill');
+            localStorage.setItem(submenuId + '-state', 'hidden');
+        }
+    }
+
+    function restoreSubMenuState(submenuId, iconId) {
+        const submenuState = localStorage.getItem(submenuId + '-state');
+
+        if (submenuState ===    'visible') {
+            toggleSubMenu(submenuId, iconId, 'bi-caret-down-fill');
         }
     }
 
@@ -58,4 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     temadapagina();
+    restoreSubMenuState('menu', 'menuIcon');
+    restoreSubMenuState('settings', 'settingsIcon');
 });
