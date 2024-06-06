@@ -63,13 +63,13 @@ function listarProdutos() {
 
                 //Div para atualizar
                 var divAtualizar = $('<div>').addClass('atualizar-container');
-                var botaoAtualizar = $('<button>').addClass('atualizar').attr('type', 'button').text('Atualizar').data('id', produto.cod);
+                var botaoAtualizar = $('<button>').addClass('atualizar').attr('type', 'button').html('<i class="bi bi-pencil"></i>').data('id', produto.cod);
                 divAtualizar.append(botaoAtualizar);
                 item.append(divAtualizar);
 
                 //Div para deletar
                 var divDeletar = $('<div>').addClass('deletar-container');
-                var botaoDeletar = $('<button>').addClass('deletar').attr('type', 'button').text('Deletar').data('id', produto.cod);
+                var botaoDeletar = $('<button>').addClass('deletar').attr('type', 'button').html('<i class="bi bi-x-octagon"></i>').data('id', produto.cod);
                 divDeletar.append(botaoDeletar);
                 item.append(divDeletar);
 
