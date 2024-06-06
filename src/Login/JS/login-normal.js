@@ -34,7 +34,7 @@ function q() {
     //         window.location.href = 'http://localhost/fono/src/inicio/inicio.html';
     //     }
     // });
-    window.location.href = 'http://localhost/fono/src/inicio/inicio.html';
+    window.location.href = 'http://localhost/fono/src/Paciente/listar_pacientes.html';
 }
 function w() {
     //     Swal.fire({
