@@ -46,15 +46,9 @@ if (isset($_GET['code'])) {
         ]);
 
         $_SESSION['user'] = $userinfo;
-        header('Location: col-dados.php');
-        exit;
     }
     if ($user) {
-        if ($user['dados_enviados'] == false) {
-            // Usuário ainda não enviou os dados adicionais
-            header('Location: col-dados.php');
-            exit;
-        }
+       
         header('Location: http://localhost/fono/src/inicio/inicio.html');
     }
 } else {

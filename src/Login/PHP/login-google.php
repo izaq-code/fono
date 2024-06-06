@@ -37,13 +37,8 @@ if (isset($_GET['code'])) {
 
     if ($user) {
         $_SESSION['user'] = $user;
-        if ($user['dados_enviados'] == false) {
-            // Usuário ainda não configurou uma senha
-            header('Location: col-dados.php');
-            exit;
-        }
         // Iniciar sessão do usuário
-        header('Location: http://localhost/fono/src/inicio/inicio.html'); // Redirecionar para a página inicial ou qualquer outra página desejada
+        header('Location: http://localhost/fono/src/Paciente/listar_pacientes.html'); // Redirecionar para a página inicial ou qualquer outra página desejada
     } else {
         header('Location: http://localhost/fono/src/Cadastro/PHP/error.php'); // Redirecionar para uma página de erro ou exibir uma mensagem de erro
     }

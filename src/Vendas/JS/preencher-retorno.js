@@ -18,6 +18,9 @@ $('#nome').on('change', function () {
 
         });
     });
+
+
+    
 });
 
 function ex(dada){

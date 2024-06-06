@@ -144,3 +144,14 @@ body.dark-mode .confirmar-btn:hover {
 body.dark-mode .cancelar-btn:hover {
     background-color: #990036;
 }
+
+body.dark-mode .input input[type="date"]:not(:placeholder-shown)~label {
+
+    background-color: #333;
+}
+
+body.light-mode .input input[type="date"]:not(:placeholder-shown)~label {
+
+    background-color: #ffffff;
+}
+

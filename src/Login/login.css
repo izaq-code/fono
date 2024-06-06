@@ -51,7 +51,7 @@
     color: 828282;
 }
 
-#cadastro-google {
+#login-google {
     background-color: var(--corfundosecundaria);
     border-radius: 10px;
     font-weight: 600;
@@ -62,7 +62,7 @@
     cursor: pointer;
 }
 
-#cadastro-google p {
+#login-google p {
     margin: 0;
     margin-top: 3px;
 }

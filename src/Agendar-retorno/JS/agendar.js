@@ -2,10 +2,8 @@ $(document).ready(function () {
     $('#agendar').submit(function (e) {
         e.preventDefault();
 
-        var id = 1; //localStorage.getItem('id'); 
-
         var formData = $(this).serialize();
-        formData += '&nome=' + id;
+
 
         $.ajax({
             url: './PHP/agendar.php',
