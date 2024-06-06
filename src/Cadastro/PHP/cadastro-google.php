@@ -46,10 +46,13 @@ if (isset($_GET['code'])) {
         ]);
 
         $_SESSION['user'] = $userinfo;
+
+        header('Location: http://localhost/fono/src/Paciente/listar_pacientes.html');
+
     }
     if ($user) {
        
-        header('Location: http://localhost/fono/src/inicio/inicio.html');
+        header('Location: http://localhost/fono/src/Paciente/listar_pacientes.html');
     }
 } else {
     header('Location: http://localhost/fono/src/Cadastro/PHP/error.php');
