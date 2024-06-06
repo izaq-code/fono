@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     function enviarFormulario(formData) {
         $.ajax({
-            url: './PHP/executar.php',
+            url: '../PHP/executar.php',
             type: 'POST',
             data: formData,
             success: function(response) {

@@ -5,7 +5,7 @@ $('#nome').on('change', function () {
     $(document).ready(function(){
         $.ajax({
             type: 'POST',
-            url: './PHP/preencher-retorno.php',
+            url: '../PHP/preencher-retorno.php',
             data: {
                 selecionado: selecionado
             },

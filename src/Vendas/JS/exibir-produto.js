@@ -6,7 +6,7 @@ $('#retorno').on('change', function () {
 var container = $('#dados_exibidos');
 
 $.ajax({
-    url: './PHP/exibir-produto.php',
+    url: '../PHP/exibir-produto.php',
     type: 'POST',
     data: {
         selecionado: selecionado
