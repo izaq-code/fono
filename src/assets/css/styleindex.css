@@ -239,9 +239,10 @@ margin-left: 800px;
         display: flex;
         flex-direction: column; /* Define a direção dos itens como coluna */
         align-items: center; /* Alinha os itens ao centro */
-        max-width: none; /* Remover a largura máxima */
+       
         margin: 0 auto; /* Centraliza horizontalmente */
         grid-area: fed;
+        
         
         }
     
