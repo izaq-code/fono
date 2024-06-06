@@ -25,7 +25,6 @@ Aqui estão as tecnologias e linguagens utilizadas no desenvolvimento deste proj
   <img align="center" alt="CSS3" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
   <img align="center" alt="JavaScript" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
   <img align="center" alt="jQuery" height="30" width="40" src="https://icongr.am/devicon/jquery-plain-wordmark.svg?size=128&color=e6e6e6">
-  <img align="center" alt="Bootstrap" height="30" width="40" src="https://icongr.am/devicon/bootstrap-plain-wordmark.svg?size=138&color=6842ae">
   <img align="center" alt="MySQL" height="30" width="40" src="https://icongr.am/devicon/mysql-original-wordmark.svg?size=138&color=ffffff">
   <img align="center" alt="PHP" height="30" width="40" src="https://icongr.am/devicon/php-original.svg?size=138&color=ffffff">
 </div><br>
