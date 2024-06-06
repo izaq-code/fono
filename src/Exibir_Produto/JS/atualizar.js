@@ -10,20 +10,19 @@ $(document).ready(function () {
         $('#id').val(idProduto);
     }
 
-    
     $('#Cadastro').submit(function (event) {
         event.preventDefault();
 
         var formData = new FormData(this);
 
         $.ajax({
-            url: '../PHP/atualizar_dados_produto.php', 
+            url: '../Exibir_Produto/PHP/atualizar_dados_produto.php', 
             type: 'POST',
             data: formData,
             contentType: false,
             processData: false,
             success: function (response) {
-                if (response.success) {
+            
                     Swal.fire({
                         icon: 'success',
                         title: 'Produto atualizado com sucesso!',
@@ -31,20 +30,15 @@ $(document).ready(function () {
                         timer: 1500
                     });
                     $('#Cadastro')[0].reset();
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Erro ao atualizar produto',
-                        text: response.message
-                    });
-                }
+            
+         
             },
             error: function (xhr, status, error) {
                 console.error("Erro ao atualizar produto: " + error);
                 Swal.fire({
-                    icon:'error',
-                    title:'Erro ao atualizar produto',
-                    text:'Ocorreu um erro ao processar sua solicitação. Por favor, tente novamente mais tarde.'
+                    icon: 'error',
+                    title: 'Erro ao atualizar produto',
+                    text: 'Ocorreu um erro ao processar sua solicitação. Por favor, tente novamente mais tarde.'
                 });
             }
         });
