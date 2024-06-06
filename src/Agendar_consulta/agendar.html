@@ -113,11 +113,15 @@
             <input type="date" name="data" id="data" max="9999-12-31" required>
             <label for="nome">Data</label>
           </div>
-
+          
           <div class="input">
-            <input type="time" id="hora" name="hora" max="9999-12-31" required>
-            <label for="nome">Horário</label>
-          </div>
+          <select id="hora" name="hora">
+            <option value="" disabled selected>Escolha um horário</option>
+          </select>
+        </div>
+
+            <!-- <input type="time" id="hora" name="hora" max="9999-12-31" required>
+            <label for="nome">Horário</label> -->
 
           <button id="botao-agendar-consulta" type="submit">agendar</button>
       </form>

@@ -6,6 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $consulta = $_POST['consulta'];
     $detalhes = $_POST['detalhes'];
     $fono = $_POST['fono'];
+    $prod = $_POST['prod'];
     $hora = $_POST['hora'];
     $data = $_POST['data'];
     $nome = $_POST['nome'];
@@ -41,13 +42,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     // Inserção na tabela de consulta
-    $sql5 = $pdo->prepare("INSERT INTO retorno (detalhes, id_paciente, id_consulta, id_fono, id_data_con) VALUES (:detalhes, :id_p, :id_c, :id_f, :id_d_c)");
+    $sql5 = $pdo->prepare("INSERT INTO retorno (detalhes, id_paciente, id_consulta, id_fono, id_data_con, id_produto) VALUES (:detalhes, :id_p, :id_c, :id_f, :id_d_c, :id_pr)");
     $sql5->execute([
         'detalhes' => $detalhes,
         'id_p' => $nome,
         'id_c' => $consulta,
         'id_f' => $fono,
-        'id_d_c' => $res['id']
+        'id_d_c' => $res['id'],
+        'id_pr' => $prod
     ]);
 
     if($sql5 -> rowCount() > 0) {
