@@ -7,6 +7,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $retorno = $_POST['retorno'];
     $detalhes = $_POST['detalhes'];
     $venda = $_POST['vendaa'];
+    $prod = $_POST['prod'];
+
+    if($venda == false){
+        $aumenta_estoque = $pdo->prepare("UPDATE cadastro_produto SET
+                                        quantidade_produto = quantidade_produto + 1
+                                        WHERE cod_produto = :id");
+
+        $aumenta_estoque->execute([
+        'id' => $prod
+        ]);
+    }
 
     $venda = $venda ? 1 : 0;
 
