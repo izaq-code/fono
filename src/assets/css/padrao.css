@@ -15,15 +15,6 @@ body {
   --corfundosecundaria: #eeeeee;
 }
 
-:root {
-  --corprincipalhover: #31922f;
-  --corterciaria: #426441;
-  --corterciariahover: #2e4b2d;
-  --cortextoprincipal: #ffffff;
-  --cortextosecundario: #9e9e9e;
-  --cortextoerro: #f15252;
-}
-
 /* Input */
 
 .input {
