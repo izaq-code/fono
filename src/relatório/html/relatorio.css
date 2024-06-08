@@ -206,24 +206,24 @@
 }
 
 .form-relatorio .input,
-button,
-label {
+.b,
+.a {
     display: inline-block;
     margin-right: 10px; /* Ajuste conforme necessário */
     margin-left: 15px;
 }
 
 
-label {
+.a {
 margin-top: -50px;
 margin-left: -1px;
 }
 
 
 .input:last-child,
-button,
-label {
-    margin-right: 0; /* Remove a margem direita do último elemento */
+.b,
+.a {
+    margin-right: 0; 
 }
 
 
