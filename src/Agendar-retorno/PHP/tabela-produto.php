@@ -7,7 +7,7 @@ require "../../assets/php/conexao_pdo.php";
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = $pdo->query("SELECT cod_produto AS cod, nome_produto AS nome 
-    FROM cadastro_produto");
+    FROM cadastro_produto WHERE quantidade_produto > 0");
 
     $resultado = array();
 

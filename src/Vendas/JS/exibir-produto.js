@@ -15,7 +15,11 @@ $.ajax({
     success: function (produtos) {
         container.empty();
 
+
         produtos.forEach(function (produto) {
+
+            alert(produto.cod);
+            $('#prod').val(produto.cod);
             var item = $('<div>').addClass('produto');
         
             var nome = $('<h3>').addClass('produto-nome').text(produto.nome); 

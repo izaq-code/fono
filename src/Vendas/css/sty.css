@@ -22,7 +22,8 @@
     background: var(--corfundo);
 }
 
-.container-relatorio {
+.container-agendar-consulta,
+.container-vendas-devolucao {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,35 +31,49 @@
     flex-direction: column;
 }
 
-.relatorio-titulo {
+.agendar-consulta-titulo,
+.vendas-devolucao-titulo {
     padding: 30px;
     font-size: 25px;
     font-weight: bolder;
 }
 
-.form-relatorio {
+.form-agendar-consulta,
+.form-vendas-devolucao {
     margin-left: 2%;
+}
+
+#container-botao-agendar-consulta,
+#container-botao-vendas-devolucao {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#botao-agendar-consulta,
+#vende,
+#devolver {
+    border: none;
+    background-color: var(--corprincipal);
+    color: white;
+    width: 100%;
+    margin-left: 5px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#botao-agendar-consulta:hover,
+#vende:hover,
+#devolver:hover {
+    background-color: var(--corprincipalhover);
 }
 
 .input {
     width: 431px;
     margin-bottom: 15px;
     position: relative;
-}
-
-#Relatorio {
-    width: 500px;
-    box-shadow: inset 0 0 10px rgba(34, 34, 34, 0.6);
-    border-radius: 10px;
-    margin-top: 4%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-height: 700px;
-    overflow-y: auto;
-    margin-left: -30px;
-    margin-right: 50px;
 }
 
 .input label {
@@ -92,7 +107,8 @@
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 0px 10px 1px rgba(0, 0, 0, 0.2);
-
+    margin-left: 100px;
+    margin-bottom: 30px;
 }
 
 .img-container {

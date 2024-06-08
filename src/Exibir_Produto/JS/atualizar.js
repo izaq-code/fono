@@ -4,6 +4,9 @@ $(document).on('click', '.atualizar', function () {
     window.location.href = '../../Cadastro_Produto/atualizar.html';
 });
 
+
+
+
 $(document).ready(function () {
     var idProduto = localStorage.getItem('idProduto');
     if (idProduto) {
@@ -37,11 +40,12 @@ $(document).ready(function () {
                         title: 'Produto atualizado com sucesso!',
                         showConfirmButton: false,
                         timer: 1500
+                    }).then(function() {
+                       
+                        window.location.href = '../Exibir_Produto/HTML/exibir_produto.html';
                     });
                     $('#Cadastro')[0].reset();
-            
-         
-            },
+                },
             error: function (xhr, status, error) {
                 console.error("Erro ao atualizar produto: " + error);
                 Swal.fire({
@@ -52,4 +56,4 @@ $(document).ready(function () {
             }
         });
     });
-});
+})

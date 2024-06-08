@@ -1,0 +1,68 @@
+:root {
+    --corprincipal: #008080;
+    --corprincipalhover: #036b6b;
+    --mham-200: #4ecdc4;
+    --mham-300: #d3eddc;
+    --mham-400: #5dade2;
+    --corfundo: #FFFFFF;
+    --corfundosecundaria: #EEEEEE;
+}
+
+.input input[type="date"]:not(:placeholder-shown)~label {
+    top: 0;
+    left: 15px;
+    font-size: 16px;
+    padding: 0 1px;
+}
+
+.input input[type="time"]:not(:placeholder-shown)~label {
+    top: 0;
+    left: 15px;
+    font-size: 16px;
+    padding: 0 1px;
+    background: var(--corfundo);
+}
+
+.container-agendar-consulta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92vh;
+}
+
+.agendar-consulta-titulo {
+    margin-left: 18%;
+    padding: 30px;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.form-agendar-consulta {
+    margin-left: 2%;
+}
+
+#container-botao-agendar-consulta {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#botao-agendar-consulta {
+    border: none;
+    background-color: var(--corprincipal);
+    color: white;
+    width: 100%;
+    margin-left: 5px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#botao-agendar-consulta:hover {
+    background-color: var(--corprincipalhover);
+}
+
+.input {
+    width: 431px;
+}
