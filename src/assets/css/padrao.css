@@ -15,6 +15,17 @@ body {
   --corfundosecundaria: #eeeeee;
 }
 
+:root {
+  --corfundo: #ffffff;
+  --corfundosecundaria: #282828;
+  --cortextoprincipal: #FFFFFF;
+  --cortextoprincipalhover: rgb(216, 216, 216);
+  --cortextosecundario: rgb(158, 158, 158);
+  --cortextosecundariohover: #7e7e7e;
+  --cortextoerro: #f15252;
+  --cortextoerrohover: #cc3a3a;
+}
+
 /* Input */
 
 .input {
