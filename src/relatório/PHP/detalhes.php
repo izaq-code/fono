@@ -5,15 +5,29 @@ include ('../../assets/php/conexao.php');
 if (isset($_POST['descricao']) && $_POST['descricao'] !== '') {
     $vendaId = $_POST['id'];
     $descricao = $_POST['descricao'];
-
-    $sql = "UPDATE relatorio SET descricao = '$descricao', 
-                            status = 'Finalizado'
-                            WHERE id_venda = $vendaId";
-
-    if ($conexao->query($sql) === TRUE) {
-        echo json_encode(array("message" => "Descrição salva com sucesso."));
+    
+    // Verifica se o status da venda é 'Finalizado'
+    $sql_check_status = "SELECT status FROM relatorio WHERE id_venda = $vendaId";
+    $result_check_status = $conexao->query($sql_check_status);
+    
+    if ($result_check_status->num_rows > 0) {
+        $row = $result_check_status->fetch_assoc();
+        $status = $row['status'];
+        
+        if ($status === 'Finalizado') {
+            // Se o status for 'Finalizado', atualiza a descrição
+            $sql = "UPDATE relatorio SET descricao = '$descricao' WHERE id_venda = $vendaId";
+            
+            if ($conexao->query($sql) === TRUE) {
+                echo json_encode(array("message" => "Descrição atualizada com sucesso."));
+            } else {
+                echo json_encode(array("message" => "Erro ao atualizar a descrição: " . $conexao->error));
+            }
+        } else {
+            echo json_encode(array("message" => "A descrição só pode ser atualizada quando o status estiver 'Finalizado'."));
+        }
     } else {
-        echo json_encode(array("message" => "Erro ao salvar a descrição: " . $conexao->error));
+        echo json_encode(array("message" => "Status da venda não encontrado."));
     }
 } else {
     $vendaId = $_POST['id'];
