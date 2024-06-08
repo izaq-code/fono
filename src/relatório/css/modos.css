@@ -179,10 +179,6 @@ body.dark-mode .venda p {
     color: #aaa;
 }
 
-/* Estilos gerais para a bolinha de status */
-
-
-/* Modo claro */
 body.light-mode .status-em-analise {
     background-color: red;
 }
