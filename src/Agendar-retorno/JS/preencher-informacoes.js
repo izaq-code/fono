@@ -1,6 +1,6 @@
-$(document).ready(function () {
+$('#nome').on('change', function () {
 
-    var selecionado = 1;
+    var selecionado = this.value;
 
     $.ajax({
         type: 'POST',

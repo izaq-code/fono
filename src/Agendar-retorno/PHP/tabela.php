@@ -6,15 +6,13 @@ require "../../assets/php/conexao_pdo.php";
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $id = $_POST['id'];
 
-    $sql = $pdo->prepare("SELECT id AS id, 
+
+    $sql = $pdo->query("SELECT id AS id, 
                         detalhes AS detalhes 
-    FROM consulta where id_paciente = :id");
+    FROM consulta");
     
-    $sql->execute([
-        'id' => $id
-    ]);
+
 
     $resultado = array();
 

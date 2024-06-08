@@ -1,237 +1,300 @@
-
-li {
-    list-style: none;
-}
-
-
-#fono {
-
-    color: black;
-    text-decoration: none;
-
-}
-
-#esquerda {
-
-    color: black;
-    display: flex;
-    justify-content: flex-end;
-    text-decoration: none;
-    justify-content: space-evenly;
-
-
-}
-
-#botaoEntre {
-
-    color: white;
-    background-color: #008080;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    display: flex;
-    justify-content: flex-end;
-    margin-left: auto;
-    /* Move para a direita */
-    margin-top: -20px;
-
-
-}
-
-#home {
-
-    text-align: center;
-
-}
-
-#home2 {
-
-    text-align: center;
-
-}
-
-#entre {
-    margin-left: 47%;
-    align-items: center;
-    height: 39px;
-    width: 80px;
-    color: white;
-    background-color: #008080;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    margin-top: 10px;
-    margin-bottom: 100px;
-
-
-}
-
-.img {
-    width: 80%;
-    margin-left: 10%;
-    background-position: center center; 
-    background-attachment: fixed;
-
-}
-
-#p{
-    color:#aaa;
-    margin-left: 90px;
-
-}
-
-#coment{
-
-    margin-left: 90px;
-
-}
-.container{
-height: 140px;
-padding-left: 30px;
-flex-direction: row;
-justify-content: space-evenly;
-border-radius: 20px;
-box-shadow:3px 3px 15px rgb(0, 0, 0, 0.1);
-
-}
-
-.card-text{
-
-margin-left: 55px;
-margin-top: 50px;
-padding-bottom: 10px;
-position: absolute;
-
-
-}
-
-.card{
-
-    border-radius: 20px;
-    color:#d9d9d9;
-    background-color: #FFFFFF;
-    border: none;
-
-}
-
-#fed{
-
-padding-top: 10px;
-font-weight: 500;
-color: #008080; 
-
-}
-
-#nome{
-
-position: absolute;
-color: #008080;
-margin-left: 55px;
-margin-top: 30px;
-
-}
-
-#perfil{
-
-margin-top: 30px;
-position: absolute;
-
-}
-
-
-#email {
-    display: block; /* Coloca o e-mail em uma linha separada */
-    margin-top: 5px; /* Adiciona um espaço acima do e-mail */
-    padding-left: 10px; /* Adiciona espaçamento à esquerda */
-}
-
-hr{
-    
-    box-sizing:border-box;
-    border-bottom: 3px solid #aaa;
-    width:100%;  
-  }
-
-.icons{
-
-    color:#008080 ;
-}
-
-#fono2 {
-
-    color: black;
-    text-decoration: none;
-
-}
-
-
-#divpai {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 20px;
-    min-width: 300px; /* Define a largura mínima da grid */
-    max-width: 1000px; /* Define a largura máxima da grid */
-
+:root {
+    --corprincipal: #008080;
+    --mham-200: #4ecdc4;
+    --mham-300: #d3eddc;
+    --mham-400: #5dade2;
+    --corfundo: #ffffff;
+    --corfundosecundaria: #eeeeee;
   }
   
-  .topic1 {
-
-margin-left: 800px;
-
-/* espaçamento entre as colunas*/
-
+  .show {
+    display: block !important;
   }
   
-  .pages {
+  .navbar-collapse {
+    display: none;
+  }
+  
+  .navbar-collapse.show {
+    display: block !important;
+    text-align: center;
+  }
+  
+  #fono {
+    font-size: 1.5em;
     font-weight: bold;
   }
   
-  .item {
-    margin-top: 15px;
-    /* espaço em baixo das linhas para a escrita ter um leve espaçamento*/
+  #home {
+    font-weight: bolder;
+    font-size: 2.5em;
+    margin-top: 20px;
   }
-
   
-
-#mae{
-
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 20px;
-    max-width: 1000px;
-    margin-left: 480px;
-   
-
-
-}
-
-
-.linha {
+  #home2 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  #entre {
+    margin-bottom: 20px;
+    background-color: var(--corprincipal);
+  }
+  
+  #botaoEntre {
+    background-color: var(--corprincipal);
+    margin-left: 20px;
+  }
+  
+  .btn-primary:hover {
+    color: #ffffff;
+    border: none;
+  }
+  
+  #coment {
+    margin-top: 40px;
+    font-size: 2em;
+    margin-left: -83%;
+    font-weight: bolder;
+  }
+  
+  #p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    margin-left: -68%;
+  }
+  
+  #mae {
+    margin-top: 20px;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 180px;
+  }
+  
+  #fed {
+    font-size: 1.2em;
+    font-style: italic;
+    margin-bottom: 10px;
+    color: var(--corprincipal);
+    font-weight: 500;
+  }
+  
+  #perfil {
+    margin-top: 35px;
+    margin-left: -150px;
+    position: absolute;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .text-muted {
+    position: absolute;
+    margin-top: 60px;
+    margin-left: -95px;
+  }
+  
+  #nome {
+    position: absolute;
+    font-weight: bold;
+    margin-top: 35px;
+    margin-left: 50px;
+    color: var(--corprincipal);
+  }
+  
+  #rodape {
+    background-color: var(--corfundosecundaria);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #FONO {
+    font-weight: bolder;
+    font-size: 2em;
+    margin-left: -89%;
+    top: -30px;
+    font-size: 2em;
+    color: var(--corprincipal);
+  }
+  
+  #divpai {
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    width: 75%; /* Define a largura do elemento */
-    border-bottom: 1px solid #CCCCCC; /* Define a cor e o estilo da linha */
-    margin: 20px auto; /* Espaçamento superior e inferior e centraliza horizontalmente*/
-    margin-left: 250px;
-    
-}
-
-
-@media screen and (max-width: 600px) {
-    #divpai {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajuste de colunas para dispositivos pequenos */
-        grid-gap: 40px;
-        max-width: 1000px;
-        margin: 0 auto; /* Centraliza horizontalmente */
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .topic1 {
+    flex: 1;
+    min-width: 100px;
+    font-size: 13px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .pages {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--corprincipal);
+  }
+  
+  .item {
+    margin-bottom: 5px;
+  }
+  
+  .icons svg {
+    float: left;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    color: var(--corprincipal);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .navbar-brand,
+  .nav-link {
+    font-weight: bold;
+  }
+  
+  footer {
+    margin-top: 50px;
+  }
+  
+  .aa {
+    background-color: #008080;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+  }
+  
+  @media (max-width: 1200px) {
+    #esquerda {
+      margin-left: 18px;
     }
+    #fono {
+      font-size: 1.2em;
+    }
+  
+    #home {
+      font-size: 2em;
+      margin-top: 10px;
+    }
+  
+    #home2 {
+      font-size: 1em;
+      margin-bottom: 15px;
+    }
+  
+    #coment {
+      margin-top: 20px;
+      font-size: 1.5em;
+    }
+  
+    #p {
+      font-size: 1em;
+      margin-bottom: 20px;
+    }
+  
+    #mae {
+      margin-top: 10px;
+    }
+  
+    .card {
+      padding: 10px;
+      height: 250px;
+    }
+  
+    #fed {
+      font-size: 1em;
+    }
+  
+    #perfil {
+      width: 60px;
+      height: 60px;
+      margin-left: 0;
+      margin-top: 0;
+      position: relative;
+    }
+  
+    .text-muted {
+      position: relative;
+      margin-top: 12px;
+      margin-left: 0;
+    }
+  
+    #nome {
+      margin-top: 5px;
+      margin-left: 0;
+      position: relative;
+    }
+    #p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      margin-left: -62%;
+    }
+  }
+  
+  @media (max-width: 1030px) {
+    #p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      margin-left: -55%;
+    }
+  }
+  
+  @media (max-width: 758px) {
+    #mae {
+      margin-top: 20px;
+    }
+  
+    .card {
+      width: 50%;
+      padding: 10px;
+      height: 220px;
+      margin: 0 auto;
+    }
+  
+    #FONO {
+      font-size: 1.5em;
+      margin: 0 auto 20px;
+      top: -20px;
+      text-align: center;
+    }
+  
+    #divpai {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+<<<<<<< HEAD
     
    
         #mae {
@@ -255,10 +318,49 @@ margin-left: 800px;
         width: 100%; /* Largura total */
         border-bottom: 1px solid #CCCCCC; /* Define a cor e o estilo da linha */
         margin: 40px 0; /* Espaçamento superior e inferior */
+=======
+  
+    .topic1 {
+      min-width: 80px;
+      font-size: 12px;
+      padding: 10px;
+      color: var(--corprincipal);
+>>>>>>> 77acc1651e63f980fc86b473b7dcc4f0bce794c9
     }
-}
-
-
-
-
-
+  
+    .pages {
+      font-size: 1em;
+    }
+  
+    .icons {
+      text-align: center;
+    }
+  
+    .icons svg {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      display: inline-block;
+    }
+  
+    .container {
+      padding: 10px;
+    }
+  
+    footer {
+      margin-top: 20px;
+    }
+  
+    #coment {
+      margin-top: 40px;
+      font-size: 2em;
+      margin-left: 0;
+    }
+  
+    #p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      margin-left: 0;
+    }
+  }
+  

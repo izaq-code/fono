@@ -1,7 +1,7 @@
 <?php
 include_once ("../../assets/php/conexao.php");
 
-$sql = "SELECT cod_produto, imagem_do_produto, nome_produto, preco_produto, quantidade_produto
+$sql = "SELECT cod_produto, imagem_do_produto, nome_produto, preco_produto, quantidade_produto, categoria_produto, descricao_produto
                 FROM cadastro_produto";
 
 $resultado = $conexao->query($sql);
@@ -15,7 +15,9 @@ if ($resultado->num_rows > 0) {
             'nome' => $row['nome_produto'],
             'imagem' => $row['imagem_do_produto'],
             'preco' => $row['preco_produto'],
-            'quantidade' => $row['quantidade_produto']
+            'quantidade' => $row['quantidade_produto'],
+            'categoria' =>$row['categoria_produto'],
+            'descricao' =>$row['descricao_produto']
         );
     }
 } else {

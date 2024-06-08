@@ -3,12 +3,13 @@
 require '../../assets/php/conexao_pdo.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST['nome'];
-    $num2 = $_POST['num2'];
+    $consulta = $_POST['consulta'];
+    $detalhes = $_POST['detalhes'];
     $fono = $_POST['fono'];
+    $prod = $_POST['prod'];
     $hora = $_POST['hora'];
     $data = $_POST['data'];
-    $detalhes = $_POST['detalhes'];
+    $nome = $_POST['nome'];
 
     // Inserção na tabela de datas selecionadas
     $sql = $pdo->prepare("INSERT INTO datas (data, fono_id) VALUES (:data, :fono)");
@@ -39,14 +40,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ]);
     $res = $sql4->fetch(PDO::FETCH_ASSOC);
 
+
     // Inserção na tabela de consulta
-    $sql5 = $pdo->prepare("INSERT INTO consulta (detalhes, num2, id_paciente, id_fono, id_data_con) VALUES (:detalhes, :num2, :id_p, :id_f, :id_d_c)");
+    $sql5 = $pdo->prepare("INSERT INTO retorno (detalhes, id_paciente, id_consulta, id_fono, id_data_con, id_produto) VALUES (:detalhes, :id_p, :id_c, :id_f, :id_d_c, :id_pr)");
     $sql5->execute([
         'detalhes' => $detalhes,
-        'num2' => $num2,
         'id_p' => $nome,
+        'id_c' => $consulta,
         'id_f' => $fono,
-        'id_d_c' => $res['id']
+        'id_d_c' => $res['id'],
+        'id_pr' => $prod
     ]);
 
     if($sql5 -> rowCount() > 0) {

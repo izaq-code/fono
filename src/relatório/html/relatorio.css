@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+select, input[type="date"] {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 10%;
+    box-sizing: border-box;
+}
+
+label {
+    font-weight: bold;
+}
+
+#Relatorio {
+    margin-top: 20px;
+}
+
+.produto {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.produto h3 {
+    margin-top: 0;
+}
+
+.produto img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+
+.relatorio-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.relatorio-table th, .relatorio-table td {
+    border: 5px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.relatorio-table th {
+    background-color: #f2f2f2;
+}
+
+.relatorio-table tr.even {
+    background-color: #f9f9f9;
+}
+
+.relatorio-table tr.odd {
+    background-color: #ffffff;
+}

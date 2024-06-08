@@ -4,7 +4,7 @@ $('#nome').on('change', function () {
 
     $.ajax({
         type: 'POST',
-        url: './PHP/preencher-informacoes.php',
+        url: '../PHP/preencher-informacoes.php',
         data: {
             selecionado: selecionado
         },

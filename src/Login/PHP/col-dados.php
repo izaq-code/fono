@@ -27,15 +27,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../cadastro.css">
+    <link rel="stylesheet" href="../../assets/css/padrao.css">
     <title>Configurar Senha</title>
 </head>
 <body>
 
 <h2>Configurar Senha</h2>
 <form method="POST" action="col-dados.php">
-    <label for="password">Senha:</label>
+
+<div class="input">
     <input type="password" id="password" name="password" required>
-    <br>
+    <label for="input-senha">Senha</label>
+</div>
     <button type="submit">Salvar Senha</button>
 </form>
 

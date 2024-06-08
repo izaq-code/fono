@@ -26,20 +26,28 @@
 <body>
     <h1>Agendar Retorno</h1>
     <form id="agendar">
+
+        <select id="nome" name="nome">
+            <option value="" disabled selected>Escolha um paciente</option>
+          </select>
+
         <div class="quad" id="nomec"></div>
         <div class="quad" id="cpf"></div>
         <div class="quad" id="tel"></div>
-        <select id="consulta">
+        <select id="consulta" name="consulta" required>
             <option value="" disabled selected>Selecione uma consulta</option>
         </select>
-        <input type="text" name="detalhes" placeholder="Detalhes da consulta" />
-        <select id="fono" name="fono">
+        <input type="text" name="detalhes" placeholder="Detalhes da consulta" required/>
+        <select id="fono" name="fono" required>
             <option value="" disabled selected>Escolha um fonoaudiólogo</option>
         </select>
-        <select id="hora" name="hora">
+        <select id="prod" name="prod">
+            <option value="" disabled selected>Escolha um produto</option>
+        </select>
+        <select id="hora" name="hora" required>
             <option value="" disabled selected>Escolha um horário</option>
         </select>
-        <input type="date" name="data" id="data" max="9999-12-31">
+        <input type="date" name="data" id="data" max="9999-12-31" required>
         <button type="submit"> Agendar Retorno </button>
     </form>
 
@@ -50,6 +58,10 @@
     <script src="JS/preencher-fono.js"></script>
     <script src="JS/preencher-datas.js"></script>
     <script src="JS/agendar.js"></script>
+    <script src="JS/tabela-produto.js"></script>
+    <script src="JS/tabela-cliente.js"></script>
+
+
 
 
 

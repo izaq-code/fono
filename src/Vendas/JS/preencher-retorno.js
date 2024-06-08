@@ -5,7 +5,7 @@ $('#nome').on('change', function () {
     $(document).ready(function(){
         $.ajax({
             type: 'POST',
-            url: './PHP/preencher-retorno.php',
+            url: '../PHP/preencher-retorno.php',
             data: {
                 selecionado: selecionado
             },
@@ -18,6 +18,9 @@ $('#nome').on('change', function () {
 
         });
     });
+
+
+    
 });
 
 function ex(dada){
@@ -25,11 +28,11 @@ function ex(dada){
     
     u = $('#retorno');
     u.empty();
-    u.append('<option value="" disabled selected>Escolha um horário</option>');
+    u.append('<option value="" disabled selected>Escolha um retorno</option>');
     
     for (let key in dada) {
         if (dada.hasOwnProperty(key)) {
-            var tab = "<option value='" + dada[key]['cod'] + "' data-id='"+ dada[key]['id'] +"'>" + dada[key]['hora'] + "</option>";
+            var tab = "<option value='" + dada[key]['id'] + "' data-id='"+ dada[key]['id'] +"'>" + dada[key]['detalhes'] + "</option>";
             u.append(tab);
         }
     }    

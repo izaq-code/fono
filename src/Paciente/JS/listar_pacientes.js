@@ -25,7 +25,7 @@ $(document).ready(function() {
                                 <td>
                                 <button onclick="editarPaciente(${paciente.cod_paciente})">Editar</button>
                                     <button onclick="excluirPaciente(${paciente.cod_paciente})">Excluir</button>
-                                </td>
+                                    </td>
                             </tr>
                         `;
                         tabelaPacientes.append(row);

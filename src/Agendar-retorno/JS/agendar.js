@@ -4,6 +4,7 @@ $(document).ready(function () {
 
         var formData = $(this).serialize();
 
+
         $.ajax({
             url: './PHP/agendar.php',
             type: 'POST',

@@ -1,5 +1,5 @@
 #dados_exibidos {
-  box-shadow: inset 0 0 10px rgb(34, 34, 34,0.6);
+  box-shadow: inset 0 0 10px rgb(34, 34, 34, 0.6);
   border-radius: 10px;
   margin-top: 4%;
   display: grid;
@@ -12,10 +12,10 @@
   margin-right: 50px;
 }
 
-#procura{
-display:flex;
-align-items:center;
-justify-content: center;
+#procura {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #searchInput {
@@ -43,7 +43,6 @@ justify-content: center;
   justify-content: space-between;
   box-shadow: 0 0px 10px 1px rgb(0, 0, 0, 0.2);
 }
-
 
 .img-container {
   width: 100px;
@@ -157,6 +156,76 @@ input[type="number"] {
 
 .cancelar-btn:hover {
   background-color: rgb(213, 72, 69);
+}
+
+.deletar {
+  background-color: #008080;
+  font-weight: bold;
+  color: white;
+  border: none;
+  font-size: 20px;
+  position: absolute;
+  margin-top: -205px;
+  margin-left: -105px;
+  padding: 5px;
+  border-radius: 30%;
+}
+
+.atualizar {
+  font-weight: bold;
+  background-color: #008080;
+  color: white;
+  padding: 5px;
+  border-radius: 30%;
+  border: none;
+  font-size: 20px;
+  position: absolute;
+  margin-top: -170px;
+  margin-left: -105px;
+}
+
+.atualizar::after {
+  width: 100px;
+  content: "Atualizar";
+  display: none;
+  position: absolute;
+  background-color: #008080;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  left: -130px;
+  top: -1px;
+}
+
+.atualizar:hover::after {
+  display: block;
+}
+
+.atualizar[data-tooltip]:hover::after {
+  content: "Atualizar";
+  display: block;
+}
+
+.deletar::after {
+  width: 100px;
+  content: "Deletar";
+  display: none;
+  position: absolute;
+  background-color: #008080;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  left: -130px;
+  top: -1px;
+}
+
+.deletar:hover::after {
+  display: block;
+}
+
+.deletar[data-tooltip]:hover::after {
+  content: "Deletar";
+  display: block;
 }
 
 @media screen and (max-width: 768px) {
