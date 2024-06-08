@@ -155,3 +155,47 @@ body.light-mode .input input[type="date"]:not(:placeholder-shown)~label {
     background-color: #ffffff;
 }
 
+body.light-mode .detalhes-btn:hover {
+    background-color: #033f3f;
+}
+
+body.dark-mode .detalhes-btn:hover {
+    background-color: #033f3f;
+}
+
+/* Estilos para o modo escuro */
+body.dark-mode .venda {
+    background-color: #333;
+    border: 1px solid #555;
+    color: #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .venda h4 {
+    color: #ccc;
+}
+
+body.dark-mode .venda p {
+    color: #aaa;
+}
+
+/* Estilos gerais para a bolinha de status */
+
+
+/* Modo claro */
+body.light-mode .status-em-analise {
+    background-color: red;
+}
+
+body.light-mode .status-finalizado {
+    background-color: green;
+}
+
+/* Modo escuro */
+body.dark-mode .status-em-analise {
+    background-color: red;
+}
+
+body.dark-mode .status-finalizado {
+    background-color: green;
+}
