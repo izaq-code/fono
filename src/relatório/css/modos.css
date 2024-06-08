@@ -180,18 +180,18 @@ body.dark-mode .venda p {
 }
 
 body.light-mode .status-em-analise {
-    background-color: red;
+    color: red; 
 }
 
 body.light-mode .status-finalizado {
-    background-color: green;
+    color: green;
 }
 
-/* Modo escuro */
 body.dark-mode .status-em-analise {
-    background-color: red;
+    color: red;
 }
 
 body.dark-mode .status-finalizado {
-    background-color: green;
+    color: green; 
 }
+

@@ -71,7 +71,7 @@ $(document).ready(function() {
                 var vendaHtml = '<div class="venda">';
                 vendaHtml += '<h4>Vendedor : ' + venda.nome_vendedor + '</h4>';
                 vendaHtml += '<p>Produto: ' + venda.nome_produto + '</p>';
-                vendaHtml += '<p>Status: <span class="status-bolinha ' + statusClass + '"></span> ' + venda.status + '</p>';
+                vendaHtml += '<p>Status: <div class="status-container"><span class="status-bolinha pulsar ' + statusClass + '"></span>' + venda.status + '</div></p>';
                 vendaHtml += '<button class="detalhes-btn" data-id="' + venda.id + '">Ver Detalhes</button>';
                 vendaHtml += '</div>';
                 $('#Relatorio').append(vendaHtml);
@@ -99,5 +99,4 @@ $(document).ready(function() {
 
     select();
     Vendas();
-
 });

@@ -162,4 +162,42 @@
     border-radius: 50%;
     margin-right: 5px;
     vertical-align: middle;
+    position: relative;
+    background-color: currentColor;
+}
+
+.pulsar::after {
+    animation-delay: 0.5s !important;
+}
+
+.pulsar::before, .pulsar::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -3px; 
+    right: -3px; 
+    top: -3px;
+    bottom: -4px; 
+    border-radius: 50%;
+    border: 2px solid currentColor; 
+    animation: animar 1.5s linear infinite;
+}
+
+@keyframes animar {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.status-container {
+    display: flex;
+    align-items: center;
 }
