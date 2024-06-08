@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     function select() {
         $.ajax({
-            url: '../PHP/select.php', 
+            url: '../PHP/select.php',
             type: 'POST',
             dataType: 'json',
             success: function(response) {
@@ -11,7 +11,7 @@ $(document).ready(function() {
                     value: '',
                     text: 'Selecione um vendedor'
                 }));
-                
+
                 $.each(response, function(index, vendedor) {
                     $('#selectVendedores').append($('<option>', {
                         value: vendedor.id,
@@ -27,7 +27,7 @@ $(document).ready(function() {
 
     function Vendas() {
         $.ajax({
-            url: '../PHP/relatorio.php', 
+            url: '../PHP/relatorio.php',
             type: 'POST',
             dataType: 'json',
             success: function(response) {
@@ -64,13 +64,14 @@ $(document).ready(function() {
 
     function exibirRelatorios(relatorios) {
         $('#Relatorio').empty();
-        
+
         if (relatorios.length > 0) {
             $.each(relatorios, function(index, venda) {
+                var statusClass = venda.status === 'Em análise' ? 'status-em-analise' : 'status-finalizado';
                 var vendaHtml = '<div class="venda">';
                 vendaHtml += '<h4>Vendedor : ' + venda.nome_vendedor + '</h4>';
                 vendaHtml += '<p>Produto: ' + venda.nome_produto + '</p>';
-                vendaHtml += '<p>Status: ' + venda.status + '</p>';
+                vendaHtml += '<p>Status: <div class="status-container"><span class="status-bolinha pulsar ' + statusClass + '"></span>' + venda.status + '</div></p>';
                 vendaHtml += '<button class="detalhes-btn" data-id="' + venda.id + '">Ver Detalhes</button>';
                 vendaHtml += '</div>';
                 $('#Relatorio').append(vendaHtml);
@@ -86,7 +87,7 @@ $(document).ready(function() {
     }
 
     $('#relatorio').submit(function(event) {
-        event.preventDefault(); 
+        event.preventDefault();
         filtrarVendas();
     });
 
@@ -96,7 +97,6 @@ $(document).ready(function() {
         }
     });
 
-    select();   
+    select();
     Vendas();
-
 });
