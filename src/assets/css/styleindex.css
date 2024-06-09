@@ -294,8 +294,7 @@
       align-items: center;
       gap: 10px;
     }
-<<<<<<< HEAD
-    
+
    
         #mae {
 
@@ -318,14 +317,14 @@
         width: 100%; /* Largura total */
         border-bottom: 1px solid #CCCCCC; /* Define a cor e o estilo da linha */
         margin: 40px 0; /* Espaçamento superior e inferior */
-=======
-  
+    }
+
     .topic1 {
       min-width: 80px;
       font-size: 12px;
       padding: 10px;
       color: var(--corprincipal);
->>>>>>> 77acc1651e63f980fc86b473b7dcc4f0bce794c9
+
     }
   
     .pages {

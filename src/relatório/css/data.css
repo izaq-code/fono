@@ -1,0 +1,112 @@
+/* Estilos para a div .relatorio */
+.relatorio {
+    position: absolute;
+    float: left;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    word-wrap: break-word;
+margin-top: 550px;
+margin-left: -400px;
+max-width: 500px;
+max-width: 100ch; /* Definindo a largura máxima em 10 mil letras */
+}
+
+/* Estilos para a div .produto */
+.produto {
+    width: 300px;
+
+    right: 10px;
+    top: 50%;
+    transform: translateY(-10%);
+    border: none;
+    border-radius: 30px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0px 10px 1px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+}
+
+
+
+/* Estilos para o título h4 dentro de .relatorio */
+.relatorio h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+    word-wrap: break-word;
+}
+
+/* Estilos para a div .descricao */
+.descricao {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para a div .produto */
+
+
+/* Estilos para o contêiner de imagem dentro de .produto */
+.img-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 10px 0;
+}
+
+/* Estilos para a imagem dentro do contêiner de imagem */
+.img-container img {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilos para o título h3 dentro de .produto */
+.produto h3 {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+/* Estilos para o parágrafo p dentro de .produto */
+.produto p {
+    margin: 5px 0;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Estilos para a entrada de texto com a classe .descricao-input */
+.descricao-input {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px 0;
+    padding: 10px;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para o botão com a classe .detalhes-btn */
+.detalhes-btn {
+    background-color: #008080;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos para o botão .detalhes-btn quando o mouse está sobre ele */
+.detalhes-btn:hover {
+    background-color: #036b6b;
+}
+    
