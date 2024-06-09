@@ -18,7 +18,6 @@ $.ajax({
 
         produtos.forEach(function (produto) {
 
-            alert(produto.cod);
             $('#prod').val(produto.cod);
             var item = $('<div>').addClass('produto');
         
