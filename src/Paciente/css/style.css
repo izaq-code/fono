@@ -61,6 +61,14 @@
   border-top: 1px solid #eee;
 }
 
+.input input[type="date"]:not(:placeholder-shown)~label {
+  top: 0;
+  left: 15px;
+  font-size: 16px;
+  padding: 0 1px;
+}
+
+
 @media (max-width: 1108px) {
   #pac {
     width: 100%;

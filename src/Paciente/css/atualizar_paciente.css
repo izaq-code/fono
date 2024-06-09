@@ -7,6 +7,12 @@
     --corfundo: #FFFFFF;
     --corfundosecundaria: #EEEEEE;
 }
+.input input[type="date"]:not(:placeholder-shown)~label {
+    top: 0;
+    left: 15px;
+    font-size: 16px;
+    padding: 0 1px;
+}
 
 .container-atualizar, .container-cadastrar {
     display: flex;

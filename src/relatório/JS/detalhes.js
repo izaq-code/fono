@@ -17,7 +17,7 @@ $(document).ready(function() {
                     detalhesHtml += '<p>Data da Venda: ' + response.data + '</p>';
                     detalhesHtml += '<img src="' + response.imagem_produto + '" alt="Imagem do Produto" />';
                     detalhesHtml += '<p><span style="display: none;"> ' + response.status + '</span></p>';
-                    detalhesHtml += '<input id="descricao" "></input>';
+                    detalhesHtml += ' <textarea id="descricao" name="message" rows="4" placeholder="Mensagem" required></textarea>';
                     detalhesHtml += '<button id="salvarDescricao">Enviar</button>';
                     $('#detalhesVenda').html(detalhesHtml);
 
