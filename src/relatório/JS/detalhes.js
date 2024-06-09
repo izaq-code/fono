@@ -37,8 +37,15 @@ $(document).ready(function() {
                                 descricao: descricao
                             },
                             success: function(response) {
-                                alert(response.message);
-                                window.location.reload();
+                                Swal.fire({
+                                    position: "top-end",
+                                    icon: "success",
+                                    title: "Relatorio feito com secesso!",
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                  }).then(() => {
+                                    window.location.reload();
+                                });
                             },
                             error: function(xhr, status, error) {
                                 console.error(xhr.responseText);
@@ -77,8 +84,15 @@ $(document).ready(function() {
                                 descricao: descricao
                             },
                             success: function(response) {
-                                alert(response.message);
-                                window.location.reload();
+                                Swal.fire({
+                                    position: "top-end",
+                                    icon: "success",
+                                    title: "Relatorio feito com secesso!",
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                  }).then(() => {
+                                    window.location.reload();
+                                });
                             },
                             error: function(xhr, status, error) {
                                 console.error(xhr.responseText);
