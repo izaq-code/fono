@@ -194,3 +194,31 @@ body.dark-mode .status-finalizado {
     color: green; 
 }
 
+body.light-mode .relatorio {
+    background-color: #f9f9f9;
+    color: #333;
+}
+body.dark-mode h4{
+    color: #fff;
+
+}
+
+body.dark-mode textarea{
+    background-color: #444;
+
+color: #FFFF;
+}
+body.dark-mode .relatorio {
+    background-color: #444;
+    color: #fff;
+}
+
+body.light-mode .produto {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+body.dark-mode .produto {
+    background-color: #444;
+    color: #fff;
+}
